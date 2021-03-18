@@ -1,0 +1,181 @@
+import 'package:epilepsy/conf/colors.dart';
+import 'package:epilepsy/conf/icons.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
+class TrainerCard extends StatelessWidget {
+  const TrainerCard({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Palette.card,
+        borderRadius: BorderRadius.circular(12.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black87.withOpacity(.2),
+            blurRadius: 2,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Тренажерный зал',
+                    style: const TextStyle(
+                      color: Palette.darkBlue,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0,
+                    ),
+                  ),
+                  const SizedBox(height: 18.0),
+                  Row(
+                    children: [
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            AppIcons.mind,
+                          ),
+                          const SizedBox(width: 5.0),
+                          Text('Атонический'),
+                        ],
+                      ),
+                      const SizedBox(width: 10.0),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            AppIcons.note,
+                          ),
+                          const SizedBox(width: 5.0),
+                          Text('Стресс'),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12.0),
+                  Row(
+                    children: [
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            AppIcons.run,
+                          ),
+                          const SizedBox(width: 5.0),
+                          Text('Экзамен'),
+                        ],
+                      ),
+                      const SizedBox(width: 10.0),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            width: 102.0,
+            height: 128.0,
+            padding: const EdgeInsets.all(6.0),
+            decoration: BoxDecoration(
+              color: Palette.trainerRight,
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: 92.0,
+                  height: 58.0,
+                  padding: const EdgeInsets.all(5.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6.0),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            AppIcons.calendar,
+                            fit: BoxFit.scaleDown,
+                          ),
+                          const SizedBox(width: 7.0),
+                          Text(
+                            '13:30',
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 14.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 6.0),
+                      Text(
+                        'четверг 22/09',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: 92.0,
+                  height: 58.0,
+                  padding: const EdgeInsets.all(6.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(.3),
+                    borderRadius: BorderRadius.circular(6.0),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Длительность',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 11.0,
+                        ),
+                      ),
+                      const SizedBox(height: 7.0),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            AppIcons.clock,
+                            fit: BoxFit.scaleDown,
+                          ),
+                          const SizedBox(width: 7.0),
+                          Text(
+                            '00:27',
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14.0,
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

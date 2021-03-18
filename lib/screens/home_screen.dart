@@ -1,6 +1,10 @@
+import 'dart:ui';
+
 import 'package:epilepsy/conf/colors.dart';
 import 'package:epilepsy/conf/icons.dart';
 import 'package:epilepsy/utils/sizes.dart';
+import 'package:epilepsy/widgets/trainer_card.dart';
+import 'package:epilepsy/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -10,57 +14,56 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size(GetSize.width, 100.0),
-        child: SafeArea(
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  width: 37.0,
-                  height: 37.0,
-                  decoration: BoxDecoration(
-                    color: Palette.scaffoldBackgorund,
-                    borderRadius: BorderRadius.circular(14.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black87.withOpacity(.2),
-                        blurRadius: 3,
-                        offset: Offset(2, 2), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                  child: SvgPicture.asset(
-                    AppIcons.drawer,
-                    fit: BoxFit.scaleDown,
-                  ),
-                ),
-                Text(
-                  'CEpi',
-                  style: const TextStyle(),
-                ),
-                Container(
-                  width: 37.0,
-                  height: 37.0,
-                  decoration: BoxDecoration(
-                    color: Palette.scaffoldBackgorund,
-                    borderRadius: BorderRadius.circular(14.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black87.withOpacity(.2),
-                        blurRadius: 3,
-                        offset: Offset(2, 2), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                  child: SvgPicture.asset(
-                    AppIcons.plus,
-                    fit: BoxFit.scaleDown,
-                  ),
-                ),
-              ],
+        child: CustomAppBar(),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomCard(),
+            const SizedBox(height: 23.0),
+            Text(
+              'Последние приступы',
+              style: const TextStyle(
+                color: Palette.darkBlue,
+                fontWeight: FontWeight.w500,
+                fontSize: 14.0,
+              ),
             ),
-          ),
+            const SizedBox(height: 23.0),
+            Expanded(
+              flex: 4,
+              child: ListView.separated(
+                itemCount: 3,
+                separatorBuilder: (context, index) =>
+                    const SizedBox(height: 10.0),
+                itemBuilder: (context, index) => TrainerCard(),
+              ),
+            ),
+            Container(
+              margin:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
+              width: double.infinity,
+              height: 64.0,
+              child: RaisedButton(
+                onPressed: () {},
+                elevation: 0,
+                color: Palette.purple,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(40.0),
+                ),
+                child: Text(
+                  'Приступ',
+                  style: const TextStyle(
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
