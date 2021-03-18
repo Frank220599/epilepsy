@@ -1,6 +1,8 @@
 import 'package:epilepsy/conf/colors.dart';
+import 'package:epilepsy/conf/icons.dart';
 import 'package:epilepsy/utils/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -23,20 +25,38 @@ class HomeScreen extends StatelessWidget {
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black87.withOpacity(.2),
-                        spreadRadius: 1,
-                        blurRadius: 2,
-                        offset: Offset(3, 2), // changes position of shadow
+                        blurRadius: 3,
+                        offset: Offset(2, 2), // changes position of shadow
                       ),
                     ],
                   ),
-                  child: Icon(
-                    Icons.menu,
-                    color: Palette.iconColor,
+                  child: SvgPicture.asset(
+                    AppIcons.drawer,
+                    fit: BoxFit.scaleDown,
                   ),
                 ),
                 Text(
                   'CEpi',
                   style: const TextStyle(),
+                ),
+                Container(
+                  width: 37.0,
+                  height: 37.0,
+                  decoration: BoxDecoration(
+                    color: Palette.scaffoldBackgorund,
+                    borderRadius: BorderRadius.circular(14.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black87.withOpacity(.2),
+                        blurRadius: 3,
+                        offset: Offset(2, 2), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: SvgPicture.asset(
+                    AppIcons.plus,
+                    fit: BoxFit.scaleDown,
+                  ),
                 ),
               ],
             ),

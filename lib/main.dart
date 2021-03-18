@@ -2,7 +2,7 @@ import 'package:epilepsy/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'conf/conf.dart';
+import 'conf/colors.dart';
 
 void main() {
   runApp(Epilepsy());
