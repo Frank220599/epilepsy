@@ -1,4 +1,8 @@
+import 'package:epilepsy/screens/screens.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'conf/conf.dart';
 
 void main() {
   runApp(Epilepsy());
@@ -7,8 +11,13 @@ void main() {
 class Epilepsy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(),
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Palette.scaffoldBackgorund,
+        accentColor: Palette.scaffoldBackgorund,
+      ),
+      home: HomeScreen(),
     );
   }
 }
