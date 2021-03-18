@@ -4,8 +4,13 @@ import 'package:flutter_svg/svg.dart';
 
 class AppBarButton extends StatelessWidget {
   final String icon;
+  final Function onTap;
 
-  const AppBarButton({Key key, @required this.icon}) : super(key: key);
+  const AppBarButton({
+    Key key,
+    @required this.icon,
+    @required this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +33,7 @@ class AppBarButton extends StatelessWidget {
         child: Material(
           color: Palette.scaffoldBackgorund,
           child: InkWell(
-            onTap: () {},
+            onTap: onTap,
             child: SvgPicture.asset(
               icon,
               fit: BoxFit.scaleDown,
