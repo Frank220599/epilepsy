@@ -9,4 +9,5 @@ abstract class Palette {
   static const Color card = Color(0xFFEDEEF2);
   static const Color grey = Color(0xFF74839A);
   static const Color drawerText = Color(0xFF58749D);
+  static const Color trainerCardText = Color(0xFF6874BC);
 }

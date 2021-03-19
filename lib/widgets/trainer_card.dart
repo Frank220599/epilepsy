@@ -1,4 +1,5 @@
 import 'package:epilepsy/conf/colors.dart';
+import 'package:epilepsy/conf/conf.dart';
 import 'package:epilepsy/conf/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -26,17 +27,13 @@ class TrainerCard extends StatelessWidget {
         children: [
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.fromLTRB(20.0, 20.0, 5.0, 20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Тренажерный зал',
-                    style: const TextStyle(
-                      color: Palette.darkBlue,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
-                    ),
+                    style: TextStyles.trainerCardTitle,
                   ),
                   const SizedBox(height: 18.0),
                   Row(
@@ -47,7 +44,10 @@ class TrainerCard extends StatelessWidget {
                             AppIcons.mind,
                           ),
                           const SizedBox(width: 5.0),
-                          Text('Атонический'),
+                          Text(
+                            'Атонический',
+                            style: TextStyles.trainerCardText,
+                          ),
                         ],
                       ),
                       const SizedBox(width: 10.0),
@@ -57,7 +57,10 @@ class TrainerCard extends StatelessWidget {
                             AppIcons.note,
                           ),
                           const SizedBox(width: 5.0),
-                          Text('Стресс'),
+                          Text(
+                            'Стресс',
+                            style: TextStyles.trainerCardText,
+                          ),
                         ],
                       ),
                     ],
@@ -71,7 +74,10 @@ class TrainerCard extends StatelessWidget {
                             AppIcons.run,
                           ),
                           const SizedBox(width: 5.0),
-                          Text('Экзамен'),
+                          Text(
+                            'Экзамен',
+                            style: TextStyles.trainerCardText,
+                          ),
                         ],
                       ),
                       const SizedBox(width: 10.0),
@@ -95,7 +101,7 @@ class TrainerCard extends StatelessWidget {
                 Container(
                   width: 92.0,
                   height: 58.0,
-                  padding: const EdgeInsets.all(5.0),
+                  padding: const EdgeInsets.fromLTRB(5.0, 5.0, 0.0, 5.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(6.0),
                   ),
@@ -113,6 +119,7 @@ class TrainerCard extends StatelessWidget {
                           Text(
                             '13:30',
                             style: const TextStyle(
+                              fontFamily: 'SF-UI-Display',
                               color: Colors.white,
                               fontSize: 14.0,
                             ),
@@ -123,8 +130,9 @@ class TrainerCard extends StatelessWidget {
                       Text(
                         'четверг 22/09',
                         style: const TextStyle(
+                          fontFamily: 'SF-UI-Display',
                           color: Colors.white,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           fontSize: 12.0,
                         ),
                       ),
@@ -145,6 +153,7 @@ class TrainerCard extends StatelessWidget {
                       Text(
                         'Длительность',
                         style: const TextStyle(
+                          fontFamily: 'SF-UI-Display',
                           color: Colors.white,
                           fontWeight: FontWeight.w500,
                           fontSize: 11.0,
@@ -162,7 +171,8 @@ class TrainerCard extends StatelessWidget {
                             '00:27',
                             style: const TextStyle(
                               color: Colors.white,
-                              fontWeight: FontWeight.w500,
+                              fontFamily: 'SF-UI-Display',
+                              fontWeight: FontWeight.w600,
                               fontSize: 14.0,
                             ),
                           )

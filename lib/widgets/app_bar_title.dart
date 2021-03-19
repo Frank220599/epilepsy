@@ -1,4 +1,5 @@
 import 'package:epilepsy/conf/colors.dart';
+import 'package:epilepsy/conf/conf.dart';
 import 'package:flutter/material.dart';
 
 class AppBarTitle extends StatelessWidget {
@@ -12,17 +13,11 @@ class AppBarTitle extends StatelessWidget {
       children: [
         Text(
           'C',
-          style: const TextStyle(
-            color: Palette.darkBlue,
-            fontSize: 30.0,
-          ),
+          style: TextStyles.appBarTitle,
         ),
         Text(
           'Epi',
-          style: const TextStyle(
-            color: Palette.purple,
-            fontSize: 30.0,
-          ),
+          style: TextStyles.appBarTitle.copyWith(color: Palette.purple),
         ),
       ],
     );

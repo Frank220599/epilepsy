@@ -1,4 +1,5 @@
 import 'package:epilepsy/conf/colors.dart';
+import 'package:epilepsy/conf/conf.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
@@ -29,6 +30,7 @@ class CustomCard extends StatelessWidget {
           Text(
             'Без припадков',
             style: const TextStyle(
+              fontFamily: 'SF-UI-Display',
               color: Palette.darkBlue,
               fontSize: 14.0,
             ),
@@ -37,8 +39,8 @@ class CustomCard extends StatelessWidget {
             '02:08:32',
             style: const TextStyle(
               fontSize: 35.0,
-              letterSpacing: 3.0,
-              fontWeight: FontWeight.bold,
+              letterSpacing: 2.0,
+              fontWeight: FontWeight.w700,
               color: Palette.darkBlue,
             ),
           ),
@@ -51,24 +53,15 @@ class CustomCard extends StatelessWidget {
                 children: [
                   Text(
                     'дни'.toUpperCase(),
-                    style: const TextStyle(
-                      color: Palette.grey,
-                      fontSize: 12.0,
-                    ),
+                    style: TextStyles.cardData,
                   ),
                   Text(
                     'часы'.toUpperCase(),
-                    style: const TextStyle(
-                      color: Palette.grey,
-                      fontSize: 12.0,
-                    ),
+                    style: TextStyles.cardData,
                   ),
                   Text(
                     'мин'.toUpperCase(),
-                    style: const TextStyle(
-                      color: Palette.grey,
-                      fontSize: 12.0,
-                    ),
+                    style: TextStyles.cardData,
                   ),
                 ],
               ),

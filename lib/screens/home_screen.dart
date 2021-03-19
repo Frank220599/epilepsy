@@ -1,12 +1,10 @@
 import 'dart:ui';
 
 import 'package:epilepsy/conf/colors.dart';
-import 'package:epilepsy/conf/icons.dart';
 import 'package:epilepsy/utils/sizes.dart';
 import 'package:epilepsy/widgets/trainer_card.dart';
 import 'package:epilepsy/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -15,168 +13,127 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
-  final rightSlide = GetSize.width * 0.6;
+  static Duration duration = Duration(milliseconds: 300);
+  AnimationController _controller;
 
-  AnimationController _animationController;
+  static const double maxSlide = 255;
+  static const dragRightStartVal = 60;
+  static const dragLeftStartVal = maxSlide - 20;
+  static bool shouldDrag = false;
 
   @override
   void initState() {
     super.initState();
-    _animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 300));
+    _controller =
+        AnimationController(vsync: this, duration: _HomeScreenState.duration);
   }
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
   _toggleAnimation() {
-    _animationController.isDismissed
-        ? _animationController.forward()
-        : _animationController.reverse();
+    _controller.isDismissed ? _controller.forward() : _controller.reverse();
   }
 
-  Map<int, dynamic> drawerData = {
-    0: {'icon': AppIcons.drawerCalendar, 'text': 'Календарь'},
-    1: {'icon': AppIcons.tendencies, 'text': 'Тенденции'},
-    2: {'icon': AppIcons.energy, 'text': 'Лекарства'},
-    3: {'icon': AppIcons.plants, 'text': 'Тарифы'},
-    4: {'icon': AppIcons.eeg, 'text': 'ЭЭГ'},
-    5: {'icon': AppIcons.news, 'text': 'Новости'},
-    6: {'icon': AppIcons.settings, 'text': 'Настройки'},
-    7: {'icon': AppIcons.aboutApp, 'text': 'О приложении'},
-    8: {'icon': AppIcons.support, 'text': 'Служба поддержки'},
-    9: {'icon': AppIcons.faq, 'text': 'FAQ'},
-  };
+  void _onDragStart(DragStartDetails startDetails) {
+    bool isDraggingFromLeft = _controller.isDismissed &&
+        startDetails.globalPosition.dx < dragRightStartVal;
+    bool isDraggingFromRight = !_controller.isDismissed &&
+        startDetails.globalPosition.dx > dragLeftStartVal;
+    shouldDrag = isDraggingFromLeft || isDraggingFromRight;
+  }
+
+  void _onDragUpdate(DragUpdateDetails updateDetails) {
+    if (!shouldDrag) return;
+
+    double delta = updateDetails.primaryDelta / maxSlide;
+    _controller.value += delta;
+  }
+
+  void _onDragEnd(DragEndDetails dragEndDetails) {
+    if (_controller.isDismissed || _controller.isCompleted) {
+      return;
+    }
+    double _kminFlingVelocity = 365.0;
+    double dragVelocity = dragEndDetails.velocity.pixelsPerSecond.dx.abs();
+    if (dragVelocity >= _kminFlingVelocity) {
+      double visualVelocityInPx =
+          dragEndDetails.velocity.pixelsPerSecond.dx / GetSize.width;
+      _controller.fling(velocity: visualVelocityInPx);
+    } else if (_controller.value < .5) {
+      _controller.reverse();
+    } else {
+      _controller.forward();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    print(drawerData);
-    return AnimatedBuilder(
-      animation: _animationController,
-      builder: (context, child) {
-        double slide = rightSlide * _animationController.value;
-        double scale = 1 - (_animationController.value * 0.3);
+    return GestureDetector(
+      onHorizontalDragStart: _onDragStart,
+      onHorizontalDragUpdate: _onDragUpdate,
+      onHorizontalDragEnd: _onDragEnd,
+      child: AnimatedBuilder(
+        animation: _controller,
+        builder: (context, child) {
+          double animationVal = _controller.value;
+          double translateVal = animationVal * maxSlide;
+          double scaleVal = 1 - (animationVal * 0.3);
 
-        return Stack(
-          children: [
-            Scaffold(
-              backgroundColor: Palette.scaffoldBackgorund,
-              body: Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: Palette.scaffoldBackgorund,
-                child: SafeArea(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20.0, top: 50.0),
+          return Stack(
+            children: [
+              CustomDrawer(),
+              Transform(
+                transform: Matrix4.identity()
+                  ..translate(translateVal)
+                  ..scale(scaleVal),
+                alignment: Alignment.centerLeft,
+                child: Scaffold(
+                  appBar: PreferredSize(
+                    preferredSize: Size(GetSize.width, 100.0),
+                    child: CustomAppBar(
+                      onTap: () => _toggleAnimation(),
+                    ),
+                  ),
+                  body: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
-                            children: List.generate(
-                          drawerData.length,
-                          (index) => ListTile(
-                            leading: SvgPicture.asset(
-                              drawerData[index]['icon'],
-                              fit: BoxFit.scaleDown,
-                            ),
-                            title: Text(
-                              drawerData[index]['text'],
-                              style: const TextStyle(
-                                fontSize: 16.0,
-                                color: Palette.drawerText,
-                              ),
-                            ),
-                          ),
-                        )),
-                        ListTile(
-                          leading: SvgPicture.asset(
-                            AppIcons.exit,
-                            fit: BoxFit.scaleDown,
-                          ),
-                          title: Text(
-                            'Выход',
-                            style: const TextStyle(
-                              fontSize: 16.0,
-                              color: Palette.drawerText,
-                            ),
+                        CustomCard(),
+                        const SizedBox(height: 23.0),
+                        Text(
+                          'Последние приступы',
+                          style: const TextStyle(
+                            fontFamily: 'SF-UI-Display',
+                            color: Palette.darkBlue,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14.0,
                           ),
                         ),
+                        const SizedBox(height: 23.0),
+                        Expanded(
+                          flex: 4,
+                          child: ListView.separated(
+                            itemCount: 3,
+                            separatorBuilder: (context, index) =>
+                                const SizedBox(height: 10.0),
+                            itemBuilder: (context, index) => TrainerCard(),
+                          ),
+                        ),
+                        HomeFooter(),
                       ],
                     ),
                   ),
                 ),
               ),
-            ),
-            Transform(
-              transform: Matrix4.identity()
-                ..translate(slide)
-                ..scale(scale),
-              alignment: Alignment.center,
-              child: Scaffold(
-                appBar: PreferredSize(
-                  preferredSize: Size(GetSize.width, 100.0),
-                  child: CustomAppBar(
-                    onTap: () => _toggleAnimation(),
-                  ),
-                ),
-                body: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomCard(),
-                      const SizedBox(height: 23.0),
-                      Text(
-                        'Последние приступы',
-                        style: const TextStyle(
-                          color: Palette.darkBlue,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14.0,
-                        ),
-                      ),
-                      const SizedBox(height: 23.0),
-                      Expanded(
-                        flex: 4,
-                        child: ListView.separated(
-                          itemCount: 3,
-                          separatorBuilder: (context, index) =>
-                              const SizedBox(height: 10.0),
-                          itemBuilder: (context, index) => TrainerCard(),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 15.0),
-                        width: double.infinity,
-                        height: 64.0,
-                        child: RaisedButton(
-                          onPressed: () {},
-                          elevation: 0,
-                          color: Palette.purple,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(40.0),
-                          ),
-                          child: Text(
-                            'Приступ',
-                            style: const TextStyle(
-                              fontSize: 22.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
-        );
-      },
+            ],
+          );
+        },
+      ),
     );
   }
 }
