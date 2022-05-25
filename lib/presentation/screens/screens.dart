@@ -1,0 +1,17 @@
+export 'home/screen.dart';
+export 'drugs/screen.dart';
+export 'faq/screen.dart';
+export 'news/screen.dart';
+export 'calendar.dart';
+export 'add_seizure//screen.dart';
+export 'add_drug/screen.dart';
+export 'authorization/screen.dart';
+export 'login_confirmation/screen.dart';
+export 'settings/screen.dart';
+export 'about_app/screen.dart';
+export 'eeg/screen.dart';
+export 'add_eeg/screen.dart';
+export 'add_eeg/screen.dart';
+export 'select_language/screen.dart';
+export 'doctors/screen.dart';
+export 'rates/screen.dart';
