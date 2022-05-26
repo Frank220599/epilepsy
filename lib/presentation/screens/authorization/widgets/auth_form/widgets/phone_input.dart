@@ -1,7 +1,8 @@
-import 'package:epilepsy/controllers/auth_controller.dart';
-import 'package:epilepsy/utils/input_mask.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../../../application/auth_controller.dart';
+import '../../../../../../domain/utils/input_mask.dart';
 
 class PhoneInput extends StatefulWidget {
   @override

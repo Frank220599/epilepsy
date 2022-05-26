@@ -1,12 +1,15 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/constants/routes.dart';
-import 'package:epilepsy/controllers/handbook_controller.dart';
-import 'package:epilepsy/controllers/profile_controller.dart';
-import 'package:epilepsy/utils/launch_link.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:get/get.dart';
+
+import '../../../application/handbook_controller.dart';
+import '../../../application/profile_controller.dart';
+import '../../../domain/config/colors.dart';
+import '../../../domain/config/icons.dart';
+import '../../../domain/config/styles.dart';
+import '../../../domain/constants/routes.dart';
+import '../../../domain/utils/launch_link.dart';
 
 class CustomDrawer extends GetView<ProfileController> {
   final hdController = Get.find<HandBookController>();

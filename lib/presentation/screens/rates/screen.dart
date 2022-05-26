@@ -1,10 +1,12 @@
-import 'package:epilepsy/config/icons.dart';
-import 'package:epilepsy/controllers/rates_controller.dart';
-import 'package:epilepsy/screens/rates/widgets/widgets.dart';
-import 'package:epilepsy/utils/sizes.dart';
-import 'package:epilepsy/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../application/rates_controller.dart';
+import '../../../domain/config/icons.dart';
+import '../../../domain/utils/sizes.dart';
+import '../../widgets/custom_app_bar.dart';
+import 'widgets/rates.dart';
+import 'widgets/user_rates.dart';
 
 var tabs = [
   'Купить'.tr,

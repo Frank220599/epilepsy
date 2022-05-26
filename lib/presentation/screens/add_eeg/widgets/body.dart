@@ -1,13 +1,15 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/add_eeg_controller.dart';
-import 'package:epilepsy/models/eeg.dart';
-import 'package:epilepsy/screens/add_eeg/widgets/comment.dart';
-import 'package:epilepsy/utils/img_picker.dart';
-import 'package:epilepsy/utils/sizes.dart';
-import 'package:epilepsy/widgets/app_button.dart';
-import 'package:epilepsy/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../application/add_eeg_controller.dart';
+import '../../../../domain/config/icons.dart';
+import '../../../../domain/utils/img_picker.dart';
+import '../../../../domain/utils/sizes.dart';
+import '../../../../infrastracture/models/eeg.dart';
+import '../../../widgets/app_button.dart';
+import '../../../widgets/custom_app_bar.dart';
+import '../../../widgets/custom_list_tile.dart';
+import 'comment.dart';
 
 class Body extends StatefulWidget {
   @override

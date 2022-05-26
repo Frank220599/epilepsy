@@ -1,11 +1,12 @@
-import 'package:epilepsy/constants/api.dart';
-import 'package:epilepsy/controllers/profile_controller.dart';
-import 'package:epilepsy/controllers/rates_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'dart:async';
 import 'dart:io';
 import 'package:webview_flutter/webview_flutter.dart';
+
+import '../../../../application/profile_controller.dart';
+import '../../../../application/rates_controller.dart';
+import '../../../../domain/constants/api.dart';
 
 class Rates extends StatefulWidget {
   const Rates({Key? key}) : super(key: key);

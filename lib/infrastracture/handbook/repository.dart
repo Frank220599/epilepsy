@@ -1,11 +1,13 @@
-import 'package:epilepsy/constants/api.dart';
-import 'package:epilepsy/models/models.dart';
-import 'package:epilepsy/models/pages.dart';
-import 'package:epilepsy/types/handbook_response.dart';
+import 'package:epilepsy/domain/api_service.dart';
+import 'package:epilepsy/domain/constants/api.dart';
+import 'package:epilepsy/infrastracture/models/contacts.dart';
 
-import 'api_service.dart';
+import '../models/pages.dart';
+import '../types/faq_response.dart';
+import '../types/handbook_response.dart';
+import '../types/news_response.dart';
 
-class HandbookService {
+class HandbookRepository {
   static final _dio = ApiService.dio;
 
   static Future<HandbookResponse> getSeizureTypes() async {

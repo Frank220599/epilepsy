@@ -1,8 +1,9 @@
-import 'package:epilepsy/screens/home/screen.dart';
-import 'package:epilepsy/router/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+
+import '../../screens/home/screen.dart';
+import 'custom_drawer.dart';
 
 class AppDrawer extends StatelessWidget {
   final ZoomDrawerController _controller = ZoomDrawerController();

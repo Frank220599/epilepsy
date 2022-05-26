@@ -1,13 +1,12 @@
-import 'package:epilepsy/constants/api.dart';
-import 'package:epilepsy/models/message.dart';
-import 'package:epilepsy/models/session.dart';
-import 'package:epilepsy/types/messages_response.dart';
-import 'package:epilepsy/types/session_response.dart';
+import 'package:epilepsy/domain/api_service.dart';
+import 'package:epilepsy/domain/constants/api.dart';
+import 'package:epilepsy/infrastracture/models/message.dart';
+import 'package:epilepsy/infrastracture/models/session.dart';
+import 'package:epilepsy/infrastracture/types/messages_response.dart';
+import 'package:epilepsy/infrastracture/types/session_response.dart';
 import 'package:get/get.dart';
 
-import 'api_service.dart';
-
-class SessionService {
+class SessionRepository {
   static final _dio = ApiService.dio;
 
   static Future<SessionModel> createSession(payload) async {

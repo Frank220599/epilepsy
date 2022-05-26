@@ -1,7 +1,8 @@
-import 'package:epilepsy/controllers/handbook_controller.dart';
-import 'package:epilepsy/controllers/seizure_controller.dart';
-import 'package:epilepsy/services/seizure_service.dart';
+import 'package:epilepsy/application/seizure_controller.dart';
+import 'package:epilepsy/infrastracture/seizure/repository.dart';
 import 'package:get/get.dart';
+
+import 'handbook_controller.dart';
 
 class AddSeizureController extends GetxController {
   var isLoading = false.obs;
@@ -37,7 +38,7 @@ class AddSeizureController extends GetxController {
         if (payload['notice']!.isEmpty) {
           payload['notice'] = seizure.notice;
         }
-        final data = await SeizureService.seizureUpdate(
+        final data = await SeizureRepository.seizureUpdate(
           id: seizure.id,
           payload: payload,
         );
@@ -49,7 +50,7 @@ class AddSeizureController extends GetxController {
         });
         controller.lastThree.data.value = newData.toList();
       } else {
-        final data = await SeizureService.seizureStore(payload);
+        final data = await SeizureRepository.seizureStore(payload);
         controller.lastThree.data.insert(0, data.data);
       }
       Get.back();

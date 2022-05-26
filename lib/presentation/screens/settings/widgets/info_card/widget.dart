@@ -1,5 +1,5 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/profile_controller.dart';
+import '../../../../../application/profile_controller.dart';
+import '../../../../../domain/config/colors.dart';
 import './widgets/user_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

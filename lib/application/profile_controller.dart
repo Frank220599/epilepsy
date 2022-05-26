@@ -1,12 +1,15 @@
 import 'dart:convert';
-import 'package:epilepsy/constants/routes.dart';
-import 'package:epilepsy/services/profile_service.dart';
-import 'package:epilepsy/types/profile_response.dart';
-import 'package:epilepsy/utils/device_storage.dart';
+import 'package:epilepsy/infrastracture/profile/profile_service.dart';
+import 'package:epilepsy/infrastracture/profile/profile_service.dart';
+import 'package:epilepsy/infrastracture/profile/profile_service.dart';
 import 'package:get/get.dart';
-import 'package:epilepsy/services/api_service.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dio/dio.dart' as dio;
+
+import '../domain/api_service.dart';
+import '../domain/constants/routes.dart';
+import '../domain/utils/device_storage.dart';
+import '../infrastracture/types/profile_response.dart';
 
 class ProfileController extends GetxController {
   var profile = ProfileData().obs;
@@ -39,7 +42,7 @@ class ProfileController extends GetxController {
   Future<void> getProfile() async {
     try {
       isLoading.toggle();
-      final data = await ProfileService.getProfile();
+      final data = await ProfileRepository.getProfile();
       cacheProfile(data.data);
     } catch (e) {
       throw Exception(e);
@@ -53,7 +56,7 @@ class ProfileController extends GetxController {
       isUpdateLoading.toggle();
       final payload = profile().profile.toJson();
       payload.remove('avatar');
-      final data = await ProfileService.updateProfile(payload);
+      final data = await ProfileRepository.updateProfile(payload);
       Get.snackbar('successfully'.tr, 'updated'.tr);
       cacheProfile(data.data);
     } catch (e) {
@@ -74,7 +77,7 @@ class ProfileController extends GetxController {
           filename: fileName,
         ),
       });
-      final data = await ProfileService.updateProfile(formData);
+      final data = await ProfileRepository.updateProfile(formData);
       cacheProfile(data.data);
     } catch (e) {
       throw Exception(e);

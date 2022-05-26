@@ -1,6 +1,7 @@
-import 'package:epilepsy/constants/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../domain/constants/routes.dart';
 
 class SeizureButton extends StatelessWidget {
   @override

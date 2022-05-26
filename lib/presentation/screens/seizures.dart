@@ -1,11 +1,12 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/seizure_controller.dart';
-import 'package:epilepsy/utils/sizes.dart';
-import 'package:epilepsy/widgets/bar_chart_sample.dart';
-import 'package:epilepsy/widgets/pie_chart_sample.dart';
-import 'package:epilepsy/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../application/seizure_controller.dart';
+import '../../domain/config/icons.dart';
+import '../../domain/utils/sizes.dart';
+import '../widgets/bar_chart_sample.dart';
+import '../widgets/custom_app_bar.dart';
+import '../widgets/pie_chart_sample.dart';
 
 const types = [
   'frequency',

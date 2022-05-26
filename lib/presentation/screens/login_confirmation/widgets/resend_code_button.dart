@@ -1,8 +1,9 @@
-import 'package:epilepsy/constants/fonts.dart';
-import 'package:epilepsy/controllers/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+
+import '../../../../application/auth_controller.dart';
+import '../../../../domain/constants/fonts.dart';
 
 class ResendCodeButton extends StatelessWidget {
   final AuthController _authController = Get.find<AuthController>();

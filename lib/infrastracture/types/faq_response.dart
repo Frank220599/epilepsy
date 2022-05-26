@@ -1,4 +1,4 @@
-import 'package:epilepsy/models/faq.dart';
+import 'package:epilepsy/infrastracture/models/faq.dart';
 
 class FAQResponse {
   List<FAQModel>? data;

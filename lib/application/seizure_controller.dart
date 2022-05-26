@@ -1,7 +1,10 @@
-import 'package:epilepsy/models/seizure.dart';
-import 'package:epilepsy/models/tendencies.dart';
-import 'package:epilepsy/services/seizure_service.dart';
+import 'package:epilepsy/infrastracture/seizure/repository.dart';
+import 'package:epilepsy/infrastracture/seizure/repository.dart';
+import 'package:epilepsy/infrastracture/seizure/repository.dart';
 import 'package:get/get.dart';
+
+import '../infrastracture/models/seizure.dart';
+import '../infrastracture/models/tendencies.dart';
 
 class ObservableList<T> {
   var isLoading = true.obs;
@@ -17,7 +20,7 @@ class SeizureController extends GetxController {
   Future<void> getSeizureTypes() async {
     try {
       lastThree.isLoading(true);
-      final data = await SeizureService.getSeizureLastThree();
+      final data = await SeizureRepository.getSeizureLastThree();
       lastThree.data(data.data);
     } catch (e) {
       lastThree.isError(true);
@@ -30,7 +33,7 @@ class SeizureController extends GetxController {
   Future<void> getSeizureByDate(date) async {
     try {
       seizuresByDate.isLoading(true);
-      final data = await SeizureService.getSeizureByDate(date);
+      final data = await SeizureRepository.getSeizureByDate(date);
       seizuresByDate.data(data.data);
     } catch (e) {
       seizuresByDate.isError(true);
@@ -43,7 +46,7 @@ class SeizureController extends GetxController {
   Future<void> getStatistics() async {
     try {
       statistics = ObservableList<TendenciesModel>();
-      final data = await SeizureService.getStatistics();
+      final data = await SeizureRepository.getStatistics();
       statistics.data.add(data.data);
     } catch (e) {
       statistics.isError(true);

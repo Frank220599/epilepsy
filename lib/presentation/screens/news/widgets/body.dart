@@ -1,8 +1,9 @@
-import 'package:epilepsy/controllers/handbook_controller.dart';
-import 'package:epilepsy/screens/news/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+
+import '../../../../application/handbook_controller.dart';
+import 'card.dart';
 
 class Body extends GetView<HandBookController> {
   @override

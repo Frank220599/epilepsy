@@ -1,9 +1,19 @@
-import 'package:epilepsy/models/faq.dart';
-import 'package:epilepsy/models/handbook.dart';
-import 'package:epilepsy/models/models.dart';
-import 'package:epilepsy/models/pages.dart';
-import 'package:epilepsy/services/handbook_service.dart';
+import 'package:epilepsy/infrastracture/handbook/repository.dart';
+import 'package:epilepsy/infrastracture/handbook/repository.dart';
+import 'package:epilepsy/infrastracture/handbook/repository.dart';
+import 'package:epilepsy/infrastracture/handbook/repository.dart';
+import 'package:epilepsy/infrastracture/handbook/repository.dart';
+import 'package:epilepsy/infrastracture/handbook/repository.dart';
+import 'package:epilepsy/infrastracture/handbook/repository.dart';
+import 'package:epilepsy/infrastracture/handbook/repository.dart';
+import 'package:epilepsy/infrastracture/handbook/repository.dart';
+import 'package:epilepsy/infrastracture/models/handbook.dart';
 import 'package:get/get.dart';
+
+import '../infrastracture/models/contacts.dart';
+import '../infrastracture/models/faq.dart';
+import '../infrastracture/models/news.dart';
+import '../infrastracture/models/pages.dart';
 
 class ObservableData<T> {
   var isLoading = true.obs;
@@ -36,7 +46,7 @@ class HandBookController extends GetxController {
   Future<void> getSeizureTypes() async {
     try {
       seizureTypes = ObservableData<HandbookModel>();
-      final data = await HandbookService.getSeizureTypes();
+      final data = await HandbookRepository.getSeizureTypes();
       seizureTypes.data(data.data);
     } catch (e) {
       seizureTypes.isError(true);
@@ -49,7 +59,7 @@ class HandBookController extends GetxController {
   Future<void> getSeizureReasons() async {
     try {
       seizureReasons = ObservableData<HandbookModel>();
-      final data = await HandbookService.getSeizureReasons();
+      final data = await HandbookRepository.getSeizureReasons();
       seizureReasons.data(data.data);
     } catch (e) {
       seizureReasons.isError(true);
@@ -62,7 +72,7 @@ class HandBookController extends GetxController {
   Future<void> getSeizurePlaces() async {
     try {
       seizurePlaces = ObservableData<HandbookModel>();
-      final data = await HandbookService.getSeizurePlaces();
+      final data = await HandbookRepository.getSeizurePlaces();
       seizurePlaces.data(data.data);
     } catch (e) {
       seizurePlaces.isError(true);
@@ -75,7 +85,7 @@ class HandBookController extends GetxController {
   Future<void> getSeizureActivities() async {
     try {
       seizureActivities = ObservableData<HandbookModel>();
-      final data = await HandbookService.getSeizureActivities();
+      final data = await HandbookRepository.getSeizureActivities();
       seizureActivities.data(data.data);
     } catch (e) {
       seizureActivities.isError(true);
@@ -88,7 +98,7 @@ class HandBookController extends GetxController {
   Future<void> getFAQ() async {
     try {
       faq = ObservableData<FAQModel>();
-      final data = await HandbookService.getFAQ();
+      final data = await HandbookRepository.getFAQ();
       faq.data(data.data);
     } catch (e) {
       faq.isError(true);
@@ -101,7 +111,7 @@ class HandBookController extends GetxController {
   Future<void> getNews() async {
     try {
       news = ObservableData<News>();
-      final data = await HandbookService.getNews();
+      final data = await HandbookRepository.getNews();
       news.data(data.data);
     } catch (e) {
       news.isError(true);
@@ -113,7 +123,7 @@ class HandBookController extends GetxController {
 
   Future<void> getContacts() async {
     try {
-      final data = await HandbookService.getContacts();
+      final data = await HandbookRepository.getContacts();
       contacts(data);
     } catch (e) {
       throw Exception(e);
@@ -122,8 +132,8 @@ class HandBookController extends GetxController {
 
   Future<void> getPages() async {
     try {
-      final authorsPageR = await HandbookService.getAuthorsPage();
-      final aboutPageR = await HandbookService.getAboutPage();
+      final authorsPageR = await HandbookRepository.getAuthorsPage();
+      final aboutPageR = await HandbookRepository.getAboutPage();
       aboutPage(aboutPageR);
       authorPage(authorsPageR);
     } catch (e) {

@@ -1,14 +1,14 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/router/app_router.dart';
+import 'package:epilepsy/application/profile_controller.dart';
+import 'package:epilepsy/domain/constants/routes.dart';
+import 'package:epilepsy/domain/locales/translations.dart';
+import 'package:epilepsy/domain/utils/device_storage.dart';
+import 'package:epilepsy/presentation/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
-import 'constants/routes.dart';
-import 'controllers/profile_controller.dart';
-import 'locales/translations.dart';
-import 'utils/device_storage.dart';
+import 'domain/config/colors.dart';
 
 void main() async {
   await GetStorage.init();

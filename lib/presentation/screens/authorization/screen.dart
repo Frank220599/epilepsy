@@ -1,9 +1,9 @@
-import 'package:epilepsy/config/colors.dart';
-import 'package:epilepsy/config/styles.dart';
-import 'package:epilepsy/controllers/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../application/auth_controller.dart';
+import '../../../domain/config/colors.dart';
+import '../../../domain/config/styles.dart';
 import 'widgets/widgets.dart';
 
 class AuthorizationScreen extends StatelessWidget {

@@ -1,15 +1,17 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/add_seizure_controller.dart';
-import 'package:epilepsy/models/seizure.dart';
-import 'package:epilepsy/screens/add_drug/widgets/comment.dart';
-import 'package:epilepsy/screens/add_seizure/widgets/duration_modal/widget.dart';
-import 'package:epilepsy/screens/add_seizure/widgets/select_type_modal/widget.dart';
-import 'package:epilepsy/utils/sizes.dart';
-import 'package:epilepsy/widgets/app_button.dart';
-import 'package:epilepsy/widgets/remove_focus.dart';
-import 'package:epilepsy/widgets/widgets.dart';
+import 'package:epilepsy/presentation/screens/add_drug/widgets/comment.dart';
+import 'package:epilepsy/presentation/screens/add_seizure/widgets/select_type_modal/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../application/add_seizure_controller.dart';
+import '../../../domain/config/icons.dart';
+import '../../../domain/utils/sizes.dart';
+import '../../../infrastracture/models/seizure.dart';
+import '../../widgets/app_button.dart';
+import '../../widgets/custom_app_bar.dart';
+import '../../widgets/custom_list_tile.dart';
+import '../../widgets/remove_focus.dart';
+import 'widgets/duration_modal/widget.dart';
 
 class AddSeizureScreen extends StatefulWidget {
   @override

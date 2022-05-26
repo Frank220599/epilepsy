@@ -1,10 +1,10 @@
-import 'package:epilepsy/screens/chat/screen.dart';
-import 'package:epilepsy/screens/seizures.dart';
-import 'package:epilepsy/screens/sessions/screen.dart';
 import 'package:flutter/material.dart';
-import 'package:epilepsy/constants/routes.dart';
 import 'package:get/get.dart' as Get;
+import '../../domain/constants/routes.dart';
+import '../screens/chat/screen.dart';
 import '../screens/screens.dart';
+import '../screens/seizures.dart';
+import '../screens/sessions/screen.dart';
 import 'widgets/AppDrawer.dart';
 
 class AppRouter {

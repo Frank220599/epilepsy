@@ -1,9 +1,9 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/add_seizure_controller.dart';
-import 'package:epilepsy/widgets/cusom_modal.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../../application/add_seizure_controller.dart';
+import '../../../../../domain/config/styles.dart';
+import '../../../../widgets/cusom_modal.dart';
 import 'duration_input.dart';
 
 class DurationModal extends GetView<AddSeizureController> {

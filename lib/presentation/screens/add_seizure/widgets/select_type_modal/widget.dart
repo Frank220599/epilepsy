@@ -1,12 +1,13 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/add_seizure_controller.dart';
-import 'package:epilepsy/controllers/handbook_controller.dart';
-import 'package:epilepsy/models/handbook.dart';
-import 'package:epilepsy/screens/settings/widgets/language_select_modal/widgets/langugage_item.dart';
-import 'package:epilepsy/utils/sizes.dart';
-import 'package:epilepsy/widgets/cusom_modal.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../../application/add_seizure_controller.dart';
+import '../../../../../application/handbook_controller.dart';
+import '../../../../../domain/config/styles.dart';
+import '../../../../../domain/utils/sizes.dart';
+import '../../../../../infrastracture/models/handbook.dart';
+import '../../../../widgets/cusom_modal.dart';
+import '../../../doctors/widgets/select_type_modal/widgets/langugage_item.dart';
 
 class TypeSelectModal extends StatefulWidget {
   final index;

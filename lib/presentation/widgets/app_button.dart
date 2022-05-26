@@ -1,5 +1,7 @@
-import 'package:epilepsy/config/config.dart';
 import 'package:flutter/material.dart';
+
+import '../../domain/config/colors.dart';
+import '../../domain/config/styles.dart';
 
 class AppButton extends StatelessWidget {
   final VoidCallback onTap;

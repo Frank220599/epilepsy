@@ -1,9 +1,9 @@
-import 'package:epilepsy/constants/api.dart';
-import 'package:epilepsy/types/doctors_response.dart';
+import 'package:epilepsy/domain/constants/api.dart';
 
-import 'api_service.dart';
+import '../../domain/api_service.dart';
+import '../types/doctors_response.dart';
 
-class DoctorsService {
+class DoctorsRepository {
   static final _dio = ApiService.dio;
 
   static Future<DoctorsResponse> getDoctors() async {

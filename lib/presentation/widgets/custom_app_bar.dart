@@ -1,6 +1,9 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+
+import '../../domain/config/colors.dart';
+import '../../domain/config/icons.dart';
+import 'app_bar_button.dart';
+import 'app_bar_title.dart';
 
 class CustomAppBar extends StatelessWidget {
   final VoidCallback onTap;

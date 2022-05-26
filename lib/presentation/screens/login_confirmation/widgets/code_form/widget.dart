@@ -1,10 +1,11 @@
-import 'package:epilepsy/controllers/auth_controller.dart';
-import 'package:epilepsy/screens/login_confirmation/widgets/code_form/widgets/phone_number.dart';
-import 'package:epilepsy/screens/login_confirmation/widgets/code_form/widgets/resend_code.dart';
-import 'package:epilepsy/screens/login_confirmation/widgets/code_form/widgets/top_text.dart';
+import 'package:epilepsy/presentation/screens/login_confirmation/widgets/code_form/widgets/phone_number.dart';
+import 'package:epilepsy/presentation/screens/login_confirmation/widgets/code_form/widgets/resend_code.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+
+import '../../../../../application/auth_controller.dart';
+import '../../../authorization/widgets/auth_form/widgets/top_text.dart';
 
 class CodeForm extends StatelessWidget {
   final AuthController _authController = Get.find<AuthController>();

@@ -1,10 +1,10 @@
-import 'package:epilepsy/controllers/eeg_controller.dart';
-import 'package:epilepsy/screens/eeg/widgets/button.dart';
-import 'package:epilepsy/screens/eeg/widgets/card.dart';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+
+import '../../../../application/eeg_controller.dart';
+import 'button.dart';
+import 'card.dart';
 
 class Body extends GetView<EegController> {
   @override

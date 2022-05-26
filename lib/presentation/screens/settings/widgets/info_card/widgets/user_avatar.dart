@@ -1,8 +1,9 @@
-import 'package:epilepsy/config/colors.dart';
-import 'package:epilepsy/controllers/profile_controller.dart';
-import 'package:epilepsy/utils/img_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../../../application/profile_controller.dart';
+import '../../../../../../domain/config/colors.dart';
+import '../../../../../../domain/utils/img_picker.dart';
 
 class UserAvatar extends GetView<ProfileController> {
   @override

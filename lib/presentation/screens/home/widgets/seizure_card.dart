@@ -1,6 +1,8 @@
-import 'package:epilepsy/config/config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../../domain/config/icons.dart';
+import '../../../../domain/config/styles.dart';
 
 class SeizureCard extends StatelessWidget {
   final String place;

@@ -1,7 +1,9 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../application/profile_controller.dart';
+import '../../../../domain/config/colors.dart';
+import '../../../../domain/config/styles.dart';
 
 class NameInput extends GetView<ProfileController> {
   @override

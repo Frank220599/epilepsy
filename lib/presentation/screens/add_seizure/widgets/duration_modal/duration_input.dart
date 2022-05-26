@@ -1,8 +1,10 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/add_seizure_controller.dart';
-import 'package:epilepsy/utils/input_mask.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../../application/add_seizure_controller.dart';
+import '../../../../../domain/config/colors.dart';
+import '../../../../../domain/config/styles.dart';
+import '../../../../../domain/utils/input_mask.dart';
 
 class DurationInput extends GetView<AddSeizureController> {
   final TextEditingController tdController;

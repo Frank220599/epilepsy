@@ -1,6 +1,6 @@
-import 'package:epilepsy/models/drug.dart';
-import 'package:epilepsy/models/links.dart';
-import 'package:epilepsy/models/meta.dart';
+import 'package:epilepsy/infrastracture/models/drug.dart';
+import 'package:epilepsy/infrastracture/models/links.dart';
+import 'package:epilepsy/infrastracture/models/meta.dart';
 
 class DrugResponse {
   List<DrugModel>? data;

@@ -1,6 +1,7 @@
-import 'package:epilepsy/config/config.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../domain/config/styles.dart';
 
 class Comment extends StatelessWidget {
   final onChange;

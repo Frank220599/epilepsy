@@ -1,10 +1,10 @@
-import 'package:epilepsy/constants/api.dart';
-import 'package:epilepsy/models/drug.dart';
-import 'package:epilepsy/types/drug_response.dart';
+import 'package:epilepsy/domain/api_service.dart';
+import 'package:epilepsy/domain/constants/api.dart';
+import 'package:epilepsy/infrastracture/models/drug.dart';
 
-import 'api_service.dart';
+import '../types/drug_response.dart';
 
-class DrugService {
+class DrugRepository {
   static final _dio = ApiService.dio;
 
   static Future<DrugResponse> getDrugList() async {

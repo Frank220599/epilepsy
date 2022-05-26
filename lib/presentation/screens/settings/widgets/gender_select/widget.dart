@@ -1,7 +1,8 @@
-import 'package:epilepsy/controllers/profile_controller.dart';
-import 'package:epilepsy/screens/settings/widgets/gender_select/widgets/gender.dart';
+import 'package:epilepsy/presentation/screens/settings/widgets/gender_select/widgets/gender.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../../application/profile_controller.dart';
 
 class Genders extends StatefulWidget {
   @override

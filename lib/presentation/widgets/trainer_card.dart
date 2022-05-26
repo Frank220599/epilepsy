@@ -1,6 +1,9 @@
-import 'package:epilepsy/config/config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../domain/config/colors.dart';
+import '../../domain/config/icons.dart';
+import '../../domain/config/styles.dart';
 
 class TrainerCard extends StatelessWidget {
   final String place;

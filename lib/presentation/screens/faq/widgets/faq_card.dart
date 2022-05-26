@@ -1,8 +1,10 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/utils/epilepsy_icons.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:html/parser.dart' show parse;
+
+import '../../../../domain/config/colors.dart';
+import '../../../../domain/config/styles.dart';
+import '../../../../domain/utils/epilepsy_icons.dart';
 
 class FAQCard extends StatelessWidget {
   final data;

@@ -1,7 +1,8 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/add_seizure_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../application/add_seizure_controller.dart';
+import '../../../../domain/config/styles.dart';
 
 class Comment extends GetView<AddSeizureController> {
   @override

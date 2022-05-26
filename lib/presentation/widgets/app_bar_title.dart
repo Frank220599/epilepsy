@@ -1,5 +1,6 @@
-import 'package:epilepsy/config/config.dart';
 import 'package:flutter/material.dart';
+
+import '../../domain/config/styles.dart';
 
 class AppBarTitle extends StatelessWidget {
   final bool isHome;

@@ -1,4 +1,4 @@
-import 'package:epilepsy/models/handbook.dart';
+import 'package:epilepsy/infrastracture/models/handbook.dart';
 
 class HandbookResponse {
   List<HandbookModel>? data;

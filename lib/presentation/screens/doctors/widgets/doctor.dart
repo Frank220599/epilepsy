@@ -1,6 +1,7 @@
-import 'package:epilepsy/models/doctor.dart';
-import 'package:epilepsy/widgets/app_button.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../infrastracture/models/doctor.dart';
+import '../../../widgets/app_button.dart';
 
 class Doctor extends StatelessWidget {
   final DoctorModel data;

@@ -1,13 +1,16 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/constants/routes.dart';
-import 'package:epilepsy/controllers/handbook_controller.dart';
-import 'package:epilepsy/controllers/seizure_controller.dart';
-import 'package:epilepsy/screens/home/widgets/seizure_card.dart';
-import 'package:epilepsy/utils/sizes.dart';
-import 'package:epilepsy/widgets/widgets.dart';
+import 'package:epilepsy/presentation/screens/home/widgets/seizure_button.dart';
+import 'package:epilepsy/presentation/screens/home/widgets/seizure_card.dart';
+import 'package:epilepsy/presentation/screens/home/widgets/seizure_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:get/get.dart';
+
+import '../../../application/handbook_controller.dart';
+import '../../../application/seizure_controller.dart';
+import '../../../domain/config/colors.dart';
+import '../../../domain/constants/routes.dart';
+import '../../../domain/utils/sizes.dart';
+import '../../widgets/custom_app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   final seizuresController = Get.put(SeizureController());

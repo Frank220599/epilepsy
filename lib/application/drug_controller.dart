@@ -1,6 +1,10 @@
-import 'package:epilepsy/models/drug.dart';
-import 'package:epilepsy/services/drug_service.dart';
+import 'package:epilepsy/infrastracture/drug/repository.dart';
+import 'package:epilepsy/infrastracture/drug/repository.dart';
+import 'package:epilepsy/infrastracture/drug/repository.dart';
+import 'package:epilepsy/infrastracture/drug/repository.dart';
 import 'package:get/get.dart';
+
+import '../infrastracture/models/drug.dart';
 
 class ObservableList<T> {
   var isLoading = true.obs;
@@ -18,7 +22,7 @@ class DrugController extends GetxController {
   Future<void> getDrugList() async {
     try {
       drugs = ObservableList<DrugModel>();
-      final data = await DrugService.getDrugList();
+      final data = await DrugRepository.getDrugList();
       drugs.data(data.data);
     } catch (e) {
       drugs.isError(true);
@@ -30,7 +34,7 @@ class DrugController extends GetxController {
 
   Future<void> drugStore() async {
     try {
-      final data = await DrugService.drugStore({});
+      final data = await DrugRepository.drugStore({});
     } catch (e) {
       throw Exception(e);
     } finally {}
@@ -38,7 +42,7 @@ class DrugController extends GetxController {
 
   Future<void> drugDelete(id) async {
     try {
-      await DrugService.drugDelete(id);
+      await DrugRepository.drugDelete(id);
       var newData = drugs.data.where((element) {
         if (element.id == id) {
           return false;
@@ -55,7 +59,7 @@ class DrugController extends GetxController {
     try {
       isDrugDetailsLoading(true);
       isDrugDetailsError(false);
-      final data = await DrugService.getDrugDetails(id);
+      final data = await DrugRepository.getDrugDetails(id);
       drugDetailsData(data);
     } catch (e) {
       isDrugDetailsError(true);

@@ -1,10 +1,11 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/drug_controller.dart';
-import 'package:epilepsy/screens/drugs/widgets/body.dart';
-import 'package:epilepsy/utils/sizes.dart';
-import 'package:epilepsy/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../application/drug_controller.dart';
+import '../../../domain/config/icons.dart';
+import '../../../domain/utils/sizes.dart';
+import '../../widgets/custom_app_bar.dart';
+import '../add_eeg/widgets/body.dart';
 
 class DrugsScreen extends StatelessWidget {
   final drugController = Get.put(DrugController());

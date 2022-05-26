@@ -1,8 +1,11 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/drug_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+
+import '../../../../../../application/drug_controller.dart';
+import '../../../../../../domain/config/colors.dart';
+import '../../../../../../domain/config/icons.dart';
+import '../../../../../../domain/config/styles.dart';
 
 class DrugsCardBottom extends GetView<DrugController> {
   final drugList;

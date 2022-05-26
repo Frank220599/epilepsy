@@ -1,15 +1,16 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/profile_controller.dart';
-import 'package:epilepsy/screens/settings/widgets/date_birth.dart';
-import 'package:epilepsy/screens/settings/widgets/gender_select/widget.dart';
-import 'package:epilepsy/screens/settings/widgets/info_card/widget.dart';
-import 'package:epilepsy/screens/settings/widgets/language_select.dart';
-import 'package:epilepsy/screens/settings/widgets/name_input.dart';
-import 'package:epilepsy/utils/sizes.dart';
-import 'package:epilepsy/widgets/app_button.dart';
-import 'package:epilepsy/widgets/widgets.dart';
+import 'package:epilepsy/presentation/screens/settings/widgets/date_birth.dart';
+import 'package:epilepsy/presentation/screens/settings/widgets/gender_select/widget.dart';
+import 'package:epilepsy/presentation/screens/settings/widgets/info_card/widget.dart';
+import 'package:epilepsy/presentation/screens/settings/widgets/language_select.dart';
+import 'package:epilepsy/presentation/screens/settings/widgets/name_input.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../application/profile_controller.dart';
+import '../../../domain/config/icons.dart';
+import '../../../domain/utils/sizes.dart';
+import '../../widgets/app_button.dart';
+import '../../widgets/custom_app_bar.dart';
 
 class SettingsScreen extends GetView<ProfileController> {
   @override

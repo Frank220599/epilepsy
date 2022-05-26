@@ -1,12 +1,11 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/screens/settings/widgets/language_select_modal/widgets/custom_checkbox.dart';
-import 'package:epilepsy/screens/settings/widgets/language_select_modal/widgets/langugage_item.dart';
-import 'package:epilepsy/utils/device_storage.dart';
-import 'package:epilepsy/utils/update_locale.dart';
-import 'package:epilepsy/widgets/app_button.dart';
-import 'package:epilepsy/widgets/cusom_modal.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../../domain/config/styles.dart';
+import '../../../../../domain/utils/device_storage.dart';
+import '../../../../../domain/utils/update_locale.dart';
+import '../../../../widgets/cusom_modal.dart';
+import '../../../add_seizure/widgets/select_type_modal/widgets/langugage_item.dart';
 
 final List<Map> dialogData = [
   {

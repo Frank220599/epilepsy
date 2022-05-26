@@ -1,6 +1,7 @@
-import 'package:epilepsy/config/colors.dart';
-import 'package:epilepsy/screens/settings/widgets/language_select_modal/widgets/custom_checkbox.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../../domain/config/colors.dart';
+import '../../../../doctors/widgets/select_type_modal/widgets/custom_checkbox.dart';
 
 class LanguageItem extends StatelessWidget {
   final String title;

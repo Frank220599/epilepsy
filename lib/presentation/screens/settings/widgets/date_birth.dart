@@ -1,8 +1,9 @@
-import 'package:epilepsy/controllers/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:epilepsy/config/icons.dart';
 import 'package:get/get.dart';
+
+import '../../../../application/profile_controller.dart';
+import '../../../../domain/config/icons.dart';
 
 class DateOfBirth extends StatefulWidget {
   const DateOfBirth({Key? key}) : super(key: key);

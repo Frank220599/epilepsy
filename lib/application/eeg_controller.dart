@@ -1,6 +1,10 @@
-import 'package:epilepsy/models/eeg.dart';
-import 'package:epilepsy/services/eeg_service.dart';
+import 'package:epilepsy/infrastracture/egg/repository.dart';
+import 'package:epilepsy/infrastracture/egg/repository.dart';
+import 'package:epilepsy/infrastracture/egg/repository.dart';
+import 'package:epilepsy/infrastracture/egg/repository.dart';
 import 'package:get/get.dart';
+
+import '../infrastracture/models/eeg.dart';
 
 class ObservableList<T> {
   var isLoading = true.obs;
@@ -18,7 +22,7 @@ class EegController extends GetxController {
   Future<void> getEegList() async {
     try {
       eegList = ObservableList<EegModel>();
-      final data = await EegService.getEegList();
+      final data = await EegRepository.getEegList();
       eegList.data(data.data);
     } catch (e) {
       eegList.isError(true);
@@ -30,7 +34,7 @@ class EegController extends GetxController {
 
   Future<void> eegStore() async {
     try {
-      final data = await EegService.eegStore({});
+      final data = await EegRepository.eegStore({});
     } catch (e) {
       throw Exception(e);
     } finally {}
@@ -38,7 +42,7 @@ class EegController extends GetxController {
 
   Future<void> eegDelete(id) async {
     try {
-      final data = await EegService.eegDelete(id);
+      final data = await EegRepository.eegDelete(id);
     } catch (e) {
       throw Exception(e);
     } finally {}
@@ -48,7 +52,7 @@ class EegController extends GetxController {
     try {
       isEegDetailsLoading(true);
       isEegDetailsError(false);
-      final data = await EegService.getEegDetails(id);
+      final data = await EegRepository.getEegDetails(id);
       eegDetailsData(data);
     } catch (e) {
       isEegDetailsError(true);

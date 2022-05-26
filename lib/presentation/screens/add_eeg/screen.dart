@@ -1,5 +1,6 @@
-import 'package:epilepsy/screens/add_eeg/widgets/body.dart';
 import 'package:flutter/material.dart';
+
+import '../drugs/widgets/body.dart';
 
 class AddEegScreen extends StatelessWidget {
   const AddEegScreen({Key? key}) : super(key: key);

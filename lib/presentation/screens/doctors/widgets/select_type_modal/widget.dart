@@ -1,11 +1,12 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/rates_controller.dart';
-import 'package:epilepsy/controllers/session_controller.dart';
-import 'package:epilepsy/screens/settings/widgets/language_select_modal/widgets/langugage_item.dart';
-import 'package:epilepsy/utils/sizes.dart';
-import 'package:epilepsy/widgets/cusom_modal.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../../application/rates_controller.dart';
+import '../../../../../application/session_controller.dart';
+import '../../../../../domain/config/styles.dart';
+import '../../../../../domain/utils/sizes.dart';
+import '../../../../widgets/cusom_modal.dart';
+import '../../../add_seizure/widgets/select_type_modal/widgets/langugage_item.dart';
 
 class TypeSelectModal extends StatefulWidget {
   final doctorId;

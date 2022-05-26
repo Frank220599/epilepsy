@@ -1,9 +1,10 @@
-import 'package:epilepsy/screens/settings/widgets/language_select_modal/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import 'package:epilepsy/config/icons.dart';
 import 'package:get/get.dart';
+
+import '../../../../domain/config/icons.dart';
+import 'language_select_modal/widget.dart';
 
 class LanguageSelect extends StatelessWidget {
   _showModal() {

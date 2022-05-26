@@ -1,9 +1,10 @@
-import 'package:epilepsy/constants/routes.dart';
-import 'package:epilepsy/controllers/session_controller.dart';
-import 'package:epilepsy/models/session.dart';
-import 'package:epilepsy/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../application/session_controller.dart';
+import '../../../../domain/constants/routes.dart';
+import '../../../../infrastracture/models/session.dart';
+import '../../../widgets/app_button.dart';
 
 class Session extends GetView<SessionsController> {
   final SessionModel data;

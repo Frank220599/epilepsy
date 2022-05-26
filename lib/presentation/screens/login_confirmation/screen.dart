@@ -1,8 +1,8 @@
-import 'package:epilepsy/config/colors.dart';
-import 'package:epilepsy/config/styles.dart';
-import 'package:epilepsy/screens/login_confirmation/widgets/resend_code_button.dart';
+import 'package:epilepsy/presentation/screens/login_confirmation/widgets/resend_code_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../../domain/config/colors.dart';
+import '../../../domain/config/styles.dart';
 import 'widgets/widgets.dart';
 import 'package:get/get.dart';
 

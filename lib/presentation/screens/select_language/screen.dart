@@ -1,11 +1,12 @@
-import 'package:epilepsy/config/colors.dart';
-import 'package:epilepsy/constants/routes.dart';
-import 'package:epilepsy/screens/settings/widgets/language_select_modal/widget.dart';
-import 'package:epilepsy/utils/device_storage.dart';
-import 'package:epilepsy/utils/update_locale.dart';
-import 'package:epilepsy/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../domain/config/colors.dart';
+import '../../../domain/constants/routes.dart';
+import '../../../domain/utils/device_storage.dart';
+import '../../../domain/utils/update_locale.dart';
+import '../../widgets/app_button.dart';
+import '../settings/widgets/language_select_modal/widget.dart';
 
 class SelectLanguageScreen extends StatelessWidget {
   const SelectLanguageScreen({Key? key}) : super(key: key);

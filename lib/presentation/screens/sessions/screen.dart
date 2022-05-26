@@ -1,10 +1,11 @@
-import 'package:epilepsy/config/icons.dart';
-import 'package:epilepsy/controllers/session_controller.dart';
-import 'package:epilepsy/screens/sessions/widgets/session.dart';
-import 'package:epilepsy/utils/sizes.dart';
-import 'package:epilepsy/widgets/custom_app_bar.dart';
+import 'package:epilepsy/presentation/screens/sessions/widgets/session.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../application/session_controller.dart';
+import '../../../domain/config/icons.dart';
+import '../../../domain/utils/sizes.dart';
+import '../../widgets/custom_app_bar.dart';
 
 class SessionsScreen extends StatelessWidget {
   final controller = Get.put(

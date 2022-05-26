@@ -1,8 +1,10 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/models/news.dart';
-import 'package:epilepsy/utils/launch_link.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../domain/config/colors.dart';
+import '../../../../domain/config/styles.dart';
+import '../../../../domain/utils/launch_link.dart';
+import '../../../../infrastracture/models/news.dart';
 
 class NewsCard extends StatelessWidget {
   final News news;
@@ -73,7 +75,7 @@ class NewsCard extends StatelessWidget {
                     style: TextStyles.newsButton,
                   ),
                   style: ElevatedButton.styleFrom(
-                    side: const BorderSide(color: Palette.purple, width: 1.0),
+                    side: BorderSide(color: Palette.purple, width: 1.0),
                     elevation: 0.0,
                     primary: Palette.scaffoldBackgorund,
                     shape: RoundedRectangleBorder(

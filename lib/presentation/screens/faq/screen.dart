@@ -1,9 +1,9 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/handbook_controller.dart';
-import 'package:epilepsy/utils/sizes.dart';
-import 'package:epilepsy/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../application/handbook_controller.dart';
+import '../../../domain/config/icons.dart';
+import '../../../domain/utils/sizes.dart';
+import '../../widgets/custom_app_bar.dart';
 import 'widgets/faq_card.dart';
 
 class FaqScreen extends StatefulWidget {

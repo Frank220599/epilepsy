@@ -1,4 +1,4 @@
-import 'package:epilepsy/models/message.dart';
+import 'package:epilepsy/infrastracture/models/message.dart';
 
 class MessagesResponse {
   List<MessageModel> data;

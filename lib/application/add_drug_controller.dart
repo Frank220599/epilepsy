@@ -1,9 +1,10 @@
-import 'package:epilepsy/controllers/drug_controller.dart';
-import 'package:epilepsy/models/drug.dart';
-import 'package:epilepsy/services/drug_service.dart';
+import 'package:epilepsy/infrastracture/drug/repository.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dio/dio.dart' as dio;
+
+import '../infrastracture/models/drug.dart';
+import 'drug_controller.dart';
 
 class AddDrugController extends GetxController {
   var isLoading = false.obs;
@@ -45,7 +46,7 @@ class AddDrugController extends GetxController {
         });
       }
 
-      final data = await DrugService.drugStore(formData);
+      final data = await DrugRepository.drugStore(formData);
       final controller = Get.find<DrugController>();
       controller.drugs.data.insert(0, data.data!);
       Get.back();
@@ -77,7 +78,8 @@ class AddDrugController extends GetxController {
         if (imgFile != null) 'image': imgFile
       });
 
-      final data = await DrugService.drugUpdate(id: drug.id, payload: formData);
+      final data =
+          await DrugRepository.drugUpdate(id: drug.id, payload: formData);
       final controller = Get.find<DrugController>();
       var newData = controller.drugs.data.map((element) {
         if (element.id == drug.id) {

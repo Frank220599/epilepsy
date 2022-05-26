@@ -1,10 +1,10 @@
-import 'package:epilepsy/constants/api.dart';
-import 'package:epilepsy/models/eeg.dart';
-import 'package:epilepsy/types/eeg_response.dart';
+import 'package:epilepsy/domain/api_service.dart';
+import 'package:epilepsy/domain/constants/api.dart';
+import 'package:epilepsy/infrastracture/models/eeg.dart';
 
-import 'api_service.dart';
+import '../types/eeg_response.dart';
 
-class EegService {
+class EegRepository {
   static final _dio = ApiService.dio;
 
   static Future<EegResponse> getEegList() async {

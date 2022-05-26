@@ -1,5 +1,6 @@
-import 'package:epilepsy/config/config.dart';
 import 'package:flutter/material.dart';
+
+import 'colors.dart';
 
 abstract class TextStyles {
   static const appBarTitle = TextStyle(

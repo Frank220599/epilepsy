@@ -1,8 +1,12 @@
-import 'package:epilepsy/constants/routes.dart';
-import 'package:epilepsy/models/message.dart';
-import 'package:epilepsy/models/session.dart';
-import 'package:epilepsy/services/session_service.dart';
+import 'package:epilepsy/infrastracture/session/repository.dart';
+import 'package:epilepsy/infrastracture/session/repository.dart';
+import 'package:epilepsy/infrastracture/session/repository.dart';
+import 'package:epilepsy/infrastracture/session/repository.dart';
+import 'package:epilepsy/infrastracture/session/repository.dart';
 import 'package:get/get.dart';
+
+import '../infrastracture/models/message.dart';
+import '../infrastracture/models/session.dart';
 
 class SessionsController extends GetxController {
   var isSessionsLoading = false.obs;
@@ -24,7 +28,7 @@ class SessionsController extends GetxController {
     try {
       isSessionsLoading(true);
       isSessionsError(false);
-      var data = await SessionService.getSessions();
+      var data = await SessionRepository.getSessions();
       sessions(data.data);
     } catch (e) {
       isSessionsError(true);
@@ -37,7 +41,7 @@ class SessionsController extends GetxController {
   Future<void> createSessions(payload) async {
     try {
       isCreateSessionLoading(true);
-      var data = await SessionService.createSession(payload);
+      var data = await SessionRepository.createSession(payload);
       sessions.add(data);
       Get.offAndToNamed(ROUTES.SESSIONS);
     } catch (e) {
@@ -53,7 +57,7 @@ class SessionsController extends GetxController {
   }) async {
     try {
       isChangeStatusLoading(true);
-      var data = await SessionService.changeSessionStatus(
+      var data = await SessionRepository.changeSessionStatus(
         id: id,
         status: status,
       );
@@ -70,7 +74,7 @@ class SessionsController extends GetxController {
     try {
       isMessagesLoading(true);
       isMessagesError(false);
-      var data = await SessionService.getSessionMessages();
+      var data = await SessionRepository.getSessionMessages();
       messages(data.data);
     } catch (e) {
       isMessagesError(true);
@@ -84,7 +88,7 @@ class SessionsController extends GetxController {
     try {
       isSendMessagesLoading(true);
       isSendMessagesError(false);
-      var data = await SessionService.sendMessage(message);
+      var data = await SessionRepository.sendMessage(message);
       messages.add(data);
       message = '';
     } catch (e) {

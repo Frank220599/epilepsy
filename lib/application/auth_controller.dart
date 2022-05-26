@@ -1,10 +1,10 @@
 import 'dart:async';
+import 'package:epilepsy/application/profile_controller.dart';
+import 'package:epilepsy/infrastracture/auth/repository.dart';
 import 'package:get/get.dart';
 
-import 'package:epilepsy/controllers/profile_controller.dart';
-import 'package:epilepsy/services/auth_service.dart';
-import 'package:epilepsy/utils/device_storage.dart';
-import 'package:epilepsy/constants/routes.dart';
+import '../domain/constants/routes.dart';
+import '../domain/utils/device_storage.dart';
 
 class AuthController extends GetxController {
   Timer? timer;
@@ -44,7 +44,7 @@ class AuthController extends GetxController {
     try {
       isLoading.toggle();
       String normalizedPhone = '998' + phoneNumber().replaceAll(" ", "");
-      final data = await AuthService.login(
+      final data = await AuthRepository.login(
         phone: normalizedPhone,
       );
       Get.toNamed(ROUTES.LOGIN_CONFIRMATION, arguments: data.data.userId);
@@ -61,11 +61,11 @@ class AuthController extends GetxController {
     try {
       isLoginVerifyLoading.toggle();
       final payload = {'code': confirmationCode()};
-      final data = await AuthService.loginVerify(
+      final data = await AuthRepository.loginVerify(
         userId: Get.arguments,
         payload: payload,
       );
-      DeviceStorage.token = data.data.token;
+      DeviceStorage.token = data.data!.token;
       Get.put(ProfileController(), permanent: true);
       timer?.cancel();
       Get.offAllNamed(ROUTES.HOME);
@@ -81,7 +81,7 @@ class AuthController extends GetxController {
   void resendCode() async {
     try {
       isLoginVerifyLoading.toggle();
-      await AuthService.resendCode(userId: Get.arguments);
+      await AuthRepository.resendCode(userId: Get.arguments);
       startInterval();
     } catch (e) {
       Get.snackbar('Ошибка', e.toString());

@@ -1,6 +1,7 @@
-import 'package:epilepsy/models/doctor.dart';
-import 'package:epilepsy/services/doctors_service.dart';
+import 'package:epilepsy/infrastracture/doctors/repository.dart';
 import 'package:get/get.dart';
+
+import '../infrastracture/models/doctor.dart';
 
 class ObservableList<T> {
   var isLoading = true.obs;
@@ -16,7 +17,7 @@ class DoctorsController extends GetxController {
   Future<void> getDoctors() async {
     try {
       doctorList = ObservableList<DoctorModel>();
-      final data = await DoctorsService.getDoctors();
+      final data = await DoctorsRepository.getDoctors();
       doctorList.data(data.data);
     } catch (e) {
       doctorList.isError(true);

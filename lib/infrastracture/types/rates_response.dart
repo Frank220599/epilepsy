@@ -1,6 +1,6 @@
-import 'package:epilepsy/models/links.dart';
-import 'package:epilepsy/models/meta.dart';
-import 'package:epilepsy/models/rate.dart';
+import '../models/links.dart';
+import '../models/meta.dart';
+import '../models/rate.dart';
 
 class RatesResponse {
   List<RateModel> data;

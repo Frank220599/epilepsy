@@ -1,6 +1,7 @@
-import 'package:epilepsy/models/rate.dart';
-import 'package:epilepsy/services/profile_service.dart';
+import 'package:epilepsy/infrastracture/profile/profile_service.dart';
 import 'package:get/get.dart';
+
+import '../infrastracture/models/rate.dart';
 
 class ObservableList<T> {
   var isLoading = true.obs;
@@ -16,7 +17,7 @@ class RatesController extends GetxController {
   Future<void> getUserRates() async {
     try {
       ratesList = ObservableList<RateModel>();
-      final data = await ProfileService.getUserRates();
+      final data = await ProfileRepository.getUserRates();
       ratesList.data(data.data);
     } catch (e) {
       ratesList.isError(true);

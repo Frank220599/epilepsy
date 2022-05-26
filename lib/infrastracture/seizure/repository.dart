@@ -1,10 +1,10 @@
-import 'package:epilepsy/constants/api.dart';
-import 'package:epilepsy/types/seizure_response.dart';
-import 'package:epilepsy/types/tendencies_response.dart';
+import 'package:epilepsy/domain/api_service.dart';
+import 'package:epilepsy/domain/constants/api.dart';
+import 'package:epilepsy/infrastracture/types/tendencies_response.dart';
 
-import 'api_service.dart';
+import '../types/seizure_response.dart';
 
-class SeizureService {
+class SeizureRepository {
   static final _dio = ApiService.dio;
 
   static Future<SeizureResponse> getSeizureLastThree() async {

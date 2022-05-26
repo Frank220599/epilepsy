@@ -1,14 +1,16 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/constants/routes.dart';
-import 'package:epilepsy/controllers/seizure_controller.dart';
-import 'package:epilepsy/screens/home/widgets/seizure_card.dart';
-import 'package:epilepsy/utils/epilepsy_icons.dart';
-import 'package:epilepsy/utils/sizes.dart';
-import 'package:epilepsy/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
+
+import '../../application/seizure_controller.dart';
+import '../../domain/config/colors.dart';
+import '../../domain/config/icons.dart';
+import '../../domain/constants/routes.dart';
+import '../../domain/utils/epilepsy_icons.dart';
+import '../../domain/utils/sizes.dart';
+import '../widgets/custom_app_bar.dart';
+import 'home/widgets/seizure_card.dart';
 
 class CalendarScreen extends GetView<SeizureController> {
   const CalendarScreen({Key? key}) : super(key: key);

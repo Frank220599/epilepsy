@@ -1,10 +1,11 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/eeg_controller.dart';
-import 'package:epilepsy/screens/eeg/widgets/body.dart';
-import 'package:epilepsy/utils/sizes.dart';
-import 'package:epilepsy/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../application/eeg_controller.dart';
+import '../../../domain/config/icons.dart';
+import '../../../domain/utils/sizes.dart';
+import '../../widgets/custom_app_bar.dart';
+import '../add_eeg/widgets/body.dart';
 
 class EEGScreen extends StatelessWidget {
   final eegController = Get.put(EegController());

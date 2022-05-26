@@ -1,8 +1,9 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/add_eeg_controller.dart';
-import 'package:epilepsy/models/eeg.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../application/add_eeg_controller.dart';
+import '../../../../domain/config/styles.dart';
+import '../../../../infrastracture/models/eeg.dart';
 
 class Comment extends GetView<AddEegController> {
   final EegModel eeg = Get.arguments;

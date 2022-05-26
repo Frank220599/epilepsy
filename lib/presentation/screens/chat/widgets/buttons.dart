@@ -1,8 +1,9 @@
-import 'package:epilepsy/config/colors.dart';
-import 'package:epilepsy/controllers/session_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+
+import '../../../../application/session_controller.dart';
+import '../../../../domain/config/colors.dart';
 
 class Buttons extends GetView<SessionsController> {
   final txtController = TextEditingController();

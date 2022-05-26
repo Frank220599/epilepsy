@@ -1,5 +1,3 @@
-import 'package:epilepsy/models/models.dart';
-
 class ProfileResponse {
   ProfileData data;
 

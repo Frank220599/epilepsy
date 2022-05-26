@@ -1,9 +1,9 @@
 import 'dart:ui';
 
-import 'package:epilepsy/config/config.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../domain/config/colors.dart';
 import 'app_button.dart';
 
 class CustomModal extends StatelessWidget {

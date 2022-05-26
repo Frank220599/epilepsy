@@ -1,7 +1,9 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/constants/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../domain/config/colors.dart';
+import '../../../../domain/config/styles.dart';
+import '../../../../domain/constants/routes.dart';
 
 class EEGCard extends StatelessWidget {
   final eegModel;

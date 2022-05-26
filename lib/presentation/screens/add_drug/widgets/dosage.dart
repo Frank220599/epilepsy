@@ -1,8 +1,9 @@
-import 'package:epilepsy/config/config.dart';
-import 'package:epilepsy/controllers/add_drug_controller.dart';
-import 'package:epilepsy/models/drug.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../application/add_drug_controller.dart';
+import '../../../../domain/config/styles.dart';
+import '../../../../infrastracture/models/drug.dart';
 
 class Dosage extends GetView<AddDrugController> {
   final DrugModel drug = Get.arguments;

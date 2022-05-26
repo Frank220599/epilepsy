@@ -1,7 +1,9 @@
-import 'package:epilepsy/constants/routes.dart';
-import 'package:epilepsy/screens/drugs/widgets/widgets.dart';
+import 'package:epilepsy/presentation/screens/drugs/widgets/drug/widgets/card_bottom.dart';
+import 'package:epilepsy/presentation/screens/drugs/widgets/drug/widgets/card_top.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../../domain/constants/routes.dart';
 
 class DrugsCard extends StatelessWidget {
   final drugList;

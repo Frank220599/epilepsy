@@ -1,6 +1,6 @@
-import 'package:epilepsy/models/links.dart';
-import 'package:epilepsy/models/meta.dart';
-import 'package:epilepsy/models/news.dart';
+import 'package:epilepsy/infrastracture/models/links.dart';
+import 'package:epilepsy/infrastracture/models/meta.dart';
+import '../models/news.dart';
 
 class NewsResponse {
   List<News> data;

@@ -1,8 +1,9 @@
-import 'package:epilepsy/config/colors.dart';
-import 'package:epilepsy/constants/fonts.dart';
-import 'package:epilepsy/controllers/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../application/auth_controller.dart';
+import '../../../../domain/config/colors.dart';
+import '../../../../domain/constants/fonts.dart';
 
 class AuthButton extends StatelessWidget {
   final AuthController _authController = Get.find<AuthController>();

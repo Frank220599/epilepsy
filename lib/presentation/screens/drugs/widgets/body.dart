@@ -1,9 +1,10 @@
-import 'package:epilepsy/config/colors.dart';
-import 'package:epilepsy/controllers/drug_controller.dart';
-import 'package:epilepsy/screens/drugs/widgets/button.dart';
-import 'package:epilepsy/screens/drugs/widgets/drug/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../application/drug_controller.dart';
+import '../../../../domain/config/colors.dart';
+import 'button.dart';
+import 'drug/widget.dart';
 
 class Body extends GetView<DrugController> {
   @override

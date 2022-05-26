@@ -1,6 +1,7 @@
-import 'package:epilepsy/constants/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../../../domain/constants/fonts.dart';
 
 class TopText extends StatelessWidget {
   @override

@@ -1,9 +1,10 @@
-import 'package:epilepsy/controllers/eeg_controller.dart';
-import 'package:epilepsy/models/eeg.dart';
-import 'package:epilepsy/services/eeg_service.dart';
+import 'package:epilepsy/infrastracture/egg/repository.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dio/dio.dart' as dio;
+
+import '../infrastracture/models/eeg.dart';
+import 'eeg_controller.dart';
 
 class AddEegController extends GetxController {
   var isLoading = false.obs;
@@ -23,7 +24,7 @@ class AddEegController extends GetxController {
         'date': date,
         'comment': comment,
       });
-      final data = await EegService.eegStore(formData);
+      final data = await EegRepository.eegStore(formData);
       final controller = Get.find<EegController>();
       controller.eegList.data.insert(0, data.data);
       Get.back();
@@ -52,7 +53,7 @@ class AddEegController extends GetxController {
         if (imgFile != null) 'image': imgFile
       });
 
-      final data = await EegService.eegUpdate(id: eeg.id, payload: formData);
+      final data = await EegRepository.eegUpdate(id: eeg.id, payload: formData);
       final controller = Get.find<EegController>();
       var newData = controller.eegList.data.map((element) {
         if (element.id == eeg.id) {

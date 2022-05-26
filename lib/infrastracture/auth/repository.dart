@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:epilepsy/constants/api.dart';
-import 'package:epilepsy/types/login_response.dart';
-import 'package:epilepsy/types/login_verify_response.dart';
+import 'package:epilepsy/domain/api_service.dart';
+import 'package:epilepsy/infrastracture/types/login_response.dart';
 
-import 'api_service.dart';
+import '../../domain/constants/api.dart';
+import '../types/login_verify_response.dart';
 
-class AuthService {
+class AuthRepository {
   static final _dio = ApiService.dio;
 
   static Future<LoginResponse> login({required String phone}) async {

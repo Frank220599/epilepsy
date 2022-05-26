@@ -1,10 +1,10 @@
-import 'package:epilepsy/constants/api.dart';
-import 'package:epilepsy/types/profile_response.dart';
-import 'package:epilepsy/types/rates_response.dart';
+import 'package:epilepsy/domain/api_service.dart';
+import 'package:epilepsy/infrastracture/types/rates_response.dart';
 
-import 'api_service.dart';
+import '../../domain/constants/api.dart';
+import '../types/profile_response.dart';
 
-class ProfileService {
+class ProfileRepository {
   static final _dio = ApiService.dio;
 
   static Future<ProfileResponse> getProfile() async {

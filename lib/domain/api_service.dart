@@ -1,5 +1,5 @@
-import 'package:epilepsy/constants/api.dart';
 import 'package:dio/dio.dart';
+import 'package:epilepsy/domain/constants/api.dart';
 
 class ApiService {
   static BaseOptions options = BaseOptions(
