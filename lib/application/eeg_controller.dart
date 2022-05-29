@@ -4,7 +4,7 @@ import 'package:epilepsy/infrastracture/egg/repository.dart';
 import 'package:epilepsy/infrastracture/egg/repository.dart';
 import 'package:get/get.dart';
 
-import '../infrastracture/models/eeg.dart';
+import '../infrastracture/egg/models/eeg.dart';
 
 class ObservableList<T> {
   var isLoading = true.obs;

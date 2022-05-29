@@ -1,6 +1,6 @@
 import 'package:epilepsy/domain/api_service.dart';
 import 'package:epilepsy/domain/constants/api.dart';
-import 'package:epilepsy/infrastracture/models/eeg.dart';
+import 'package:epilepsy/infrastracture/egg/models/eeg.dart';
 
 import '../types/eeg_response.dart';
 

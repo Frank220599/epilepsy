@@ -1,4 +1,4 @@
-import 'doctor.dart';
+import '../doctors/models/doctor.dart';
 
 class MessageModel {
   int id;

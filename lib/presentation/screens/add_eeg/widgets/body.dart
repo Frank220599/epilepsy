@@ -5,7 +5,7 @@ import '../../../../application/add_eeg_controller.dart';
 import '../../../../domain/config/icons.dart';
 import '../../../../domain/utils/img_picker.dart';
 import '../../../../domain/utils/sizes.dart';
-import '../../../../infrastracture/models/eeg.dart';
+import '../../../../infrastracture/egg/models/eeg.dart';
 import '../../../widgets/app_button.dart';
 import '../../../widgets/custom_app_bar.dart';
 import '../../../widgets/custom_list_tile.dart';

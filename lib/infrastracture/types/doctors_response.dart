@@ -1,4 +1,4 @@
-import 'package:epilepsy/infrastracture/models/doctor.dart';
+import 'package:epilepsy/infrastracture/doctors/models/doctor.dart';
 import 'package:epilepsy/infrastracture/models/links.dart';
 import 'package:epilepsy/infrastracture/models/meta.dart';
 

@@ -1,4 +1,4 @@
-import 'package:epilepsy/infrastracture/profile/profile_service.dart';
+import 'package:epilepsy/infrastracture/profile/repository.dart';
 import 'package:get/get.dart';
 
 import '../infrastracture/models/rate.dart';

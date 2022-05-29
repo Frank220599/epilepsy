@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:epilepsy/infrastracture/profile/profile_service.dart';
-import 'package:epilepsy/infrastracture/profile/profile_service.dart';
-import 'package:epilepsy/infrastracture/profile/profile_service.dart';
+import 'package:epilepsy/infrastracture/profile/repository.dart';
+import 'package:epilepsy/infrastracture/profile/repository.dart';
+import 'package:epilepsy/infrastracture/profile/repository.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dio/dio.dart' as dio;

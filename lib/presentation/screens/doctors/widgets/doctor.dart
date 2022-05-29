@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../infrastracture/models/doctor.dart';
+import '../../../../infrastracture/doctors/models/doctor.dart';
 import '../../../widgets/app_button.dart';
 
 class Doctor extends StatelessWidget {

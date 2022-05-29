@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dio/dio.dart' as dio;
 
-import '../infrastracture/models/eeg.dart';
+import '../infrastracture/egg/models/eeg.dart';
 import 'eeg_controller.dart';
 
 class AddEegController extends GetxController {

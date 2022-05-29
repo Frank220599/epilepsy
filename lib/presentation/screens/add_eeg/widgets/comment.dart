@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../../application/add_eeg_controller.dart';
 import '../../../../domain/config/styles.dart';
-import '../../../../infrastracture/models/eeg.dart';
+import '../../../../infrastracture/egg/models/eeg.dart';
 
 class Comment extends GetView<AddEegController> {
   final EegModel eeg = Get.arguments;
