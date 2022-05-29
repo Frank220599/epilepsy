@@ -11,7 +11,7 @@ class Comment extends GetView<AddEegController> {
   @override
   Widget build(BuildContext context) {
     if (eeg != null) {
-      tC.text = eeg.comment;
+      tC.text = eeg.comment!;
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

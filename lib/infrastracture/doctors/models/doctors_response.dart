@@ -1,6 +1,6 @@
 import 'package:epilepsy/infrastracture/doctors/models/doctor.dart';
-import 'package:epilepsy/infrastracture/models/links.dart';
-import 'package:epilepsy/infrastracture/models/meta.dart';
+import 'package:epilepsy/infrastracture/handbook/model/links.dart';
+import 'package:epilepsy/infrastracture/handbook/model/meta.dart';
 
 class DoctorsResponse {
   List<DoctorModel>? data;

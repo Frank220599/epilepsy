@@ -1,6 +1,7 @@
 import 'package:epilepsy/infrastracture/egg/models/eeg.dart';
-import 'package:epilepsy/infrastracture/models/links.dart';
-import 'package:epilepsy/infrastracture/models/meta.dart';
+import 'package:epilepsy/infrastracture/handbook/model/meta.dart';
+
+import '../../handbook/model/links.dart';
 
 class EegResponse {
   List<EegModel>? data;

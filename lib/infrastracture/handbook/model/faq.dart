@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
 class FAQModel {
-  int id;
-  String question;
-  String answer;
+  int? id;
+  String? question;
+  String? answer;
 
   FAQModel({
     @required this.id,

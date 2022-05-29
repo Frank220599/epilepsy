@@ -1,8 +1,8 @@
 class Links {
-  String first;
-  String last;
-  String prev;
-  String next;
+  String? first;
+  String? last;
+  String? prev;
+  String? next;
 
   Links({
     this.first,

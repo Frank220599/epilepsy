@@ -1,7 +1,7 @@
-import 'package:epilepsy/models/tendencies.dart';
+import 'package:epilepsy/infrastracture/handbook/model/tendencies.dart';
 
 class TendenciesResponse {
-  TendenciesModel data;
+  TendenciesModel? data;
 
   TendenciesResponse({this.data});
 
@@ -14,7 +14,7 @@ class TendenciesResponse {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.data != null) {
-      data['data'] = this.data.toJson();
+      data['data'] = this.data!.toJson();
     }
     return data;
   }

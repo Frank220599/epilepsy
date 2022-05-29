@@ -5,7 +5,7 @@ import '../../../../../application/add_seizure_controller.dart';
 import '../../../../../application/handbook_controller.dart';
 import '../../../../../domain/config/styles.dart';
 import '../../../../../domain/utils/sizes.dart';
-import '../../../../../infrastracture/models/handbook.dart';
+import '../../../../../infrastracture/handbook/model/handbook.dart';
 import '../../../../widgets/cusom_modal.dart';
 import '../../../doctors/widgets/select_type_modal/widgets/langugage_item.dart';
 

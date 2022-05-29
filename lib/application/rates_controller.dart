@@ -1,7 +1,7 @@
 import 'package:epilepsy/infrastracture/profile/repository.dart';
 import 'package:get/get.dart';
 
-import '../infrastracture/models/rate.dart';
+import '../infrastracture/handbook/model/rate.dart';
 
 class ObservableList<T> {
   var isLoading = true.obs;

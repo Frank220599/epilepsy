@@ -8,7 +8,7 @@ import '../../../application/add_drug_controller.dart';
 import '../../../domain/config/icons.dart';
 import '../../../domain/utils/img_picker.dart';
 import '../../../domain/utils/sizes.dart';
-import '../../../infrastracture/models/drug.dart';
+import '../../../infrastracture/drug/model/drug.dart';
 import '../../widgets/app_button.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_list_tile.dart';

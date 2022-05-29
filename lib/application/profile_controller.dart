@@ -9,7 +9,7 @@ import 'package:dio/dio.dart' as dio;
 import '../domain/api_service.dart';
 import '../domain/constants/routes.dart';
 import '../domain/utils/device_storage.dart';
-import '../infrastracture/types/profile_response.dart';
+import '../infrastracture/profile/model/profile_response.dart';
 
 class ProfileController extends GetxController {
   var profile = ProfileData().obs;

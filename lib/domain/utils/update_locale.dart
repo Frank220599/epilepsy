@@ -1,7 +1,8 @@
 import 'dart:ui';
 
-import 'package:epilepsy/utils/device_storage.dart';
 import 'package:get/get.dart';
+
+import 'device_storage.dart';
 
 void updateLocale(String languageCode) {
   DeviceStorage.locale = languageCode;

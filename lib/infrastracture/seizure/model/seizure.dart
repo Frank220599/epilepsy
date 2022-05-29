@@ -1,12 +1,12 @@
 class SeizureModel {
-  int id;
-  String date;
-  String duration;
-  String type;
-  String reason;
-  String activity;
-  String place;
-  String notice;
+  int? id;
+  String? date;
+  String? duration;
+  String? type;
+  String? reason;
+  String? activity;
+  String? place;
+  String? notice;
 
   SeizureModel({
     this.id,

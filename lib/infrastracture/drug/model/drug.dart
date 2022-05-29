@@ -1,11 +1,11 @@
 class DrugModel {
-  int id;
-  String title;
-  String dosage;
-  String dateStart;
-  String dateEnd;
-  String image;
-  String comment;
+  int? id;
+  String? title;
+  String? dosage;
+  String? dateStart;
+  String? dateEnd;
+  String? image;
+  String? comment;
 
   DrugModel({
     this.id,

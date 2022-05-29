@@ -1,7 +1,7 @@
 class DoctorModel {
-  int id;
-  String phone;
-  DoctorProfile profile;
+  int? id;
+  String? phone;
+  DoctorProfile? profile;
 
   DoctorModel({this.id, this.phone, this.profile});
 
@@ -18,19 +18,19 @@ class DoctorModel {
     data['id'] = this.id;
     data['phone'] = this.phone;
     if (this.profile != null) {
-      data['profile'] = this.profile.toJson();
+      data['profile'] = this.profile?.toJson();
     }
     return data;
   }
 }
 
 class DoctorProfile {
-  String name;
-  String avatar;
-  String birthday;
-  String gender;
-  String experience;
-  String visitingPrice;
+  String? name;
+  String? avatar;
+  String? birthday;
+  String? gender;
+  String? experience;
+  String? visitingPrice;
   Null regalia;
 
   DoctorProfile({

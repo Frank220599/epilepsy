@@ -1,8 +1,8 @@
 class EegModel {
-  int id;
-  String date;
-  String image;
-  String comment;
+  int? id;
+  String? date;
+  String? image;
+  String? comment;
 
   EegModel({this.id, this.date, this.image, this.comment});
 

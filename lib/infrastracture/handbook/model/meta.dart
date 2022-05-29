@@ -1,11 +1,11 @@
 class Meta {
-  int currentPage;
-  int from;
-  int lastPage;
-  String path;
-  int perPage;
-  int to;
-  int total;
+  int? currentPage;
+  int? from;
+  int? lastPage;
+  String? path;
+  int? perPage;
+  int? to;
+  int? total;
 
   Meta(
       {this.currentPage,

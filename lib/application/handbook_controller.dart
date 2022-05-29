@@ -7,13 +7,13 @@ import 'package:epilepsy/infrastracture/handbook/repository.dart';
 import 'package:epilepsy/infrastracture/handbook/repository.dart';
 import 'package:epilepsy/infrastracture/handbook/repository.dart';
 import 'package:epilepsy/infrastracture/handbook/repository.dart';
-import 'package:epilepsy/infrastracture/models/handbook.dart';
+import 'package:epilepsy/infrastracture/handbook/model/handbook.dart';
 import 'package:get/get.dart';
 
-import '../infrastracture/models/contacts.dart';
-import '../infrastracture/models/faq.dart';
-import '../infrastracture/models/news.dart';
-import '../infrastracture/models/pages.dart';
+import '../infrastracture/handbook/model/contacts.dart';
+import '../infrastracture/handbook/model/faq.dart';
+import '../infrastracture/handbook/model/news.dart';
+import '../infrastracture/handbook/model/pages.dart';
 
 class ObservableData<T> {
   var isLoading = true.obs;

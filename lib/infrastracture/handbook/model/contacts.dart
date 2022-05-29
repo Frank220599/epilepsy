@@ -1,5 +1,5 @@
 class ContactsModel {
-  String supportLink;
+  String? supportLink;
 
   ContactsModel({this.supportLink});
 

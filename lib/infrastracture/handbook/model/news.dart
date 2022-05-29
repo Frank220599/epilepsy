@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class News {
-  int id;
-  String category;
-  String title;
-  String short;
-  String link;
-  String image;
-  String date;
+  int? id;
+  String? category;
+  String? title;
+  String? short;
+  String? link;
+  String? image;
+  String? date;
 
   News({
     @required this.id,

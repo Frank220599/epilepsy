@@ -1,5 +1,5 @@
 class AuthorsPageModel {
-  String authorsPage;
+  String? authorsPage;
 
   AuthorsPageModel({this.authorsPage});
 
@@ -15,7 +15,7 @@ class AuthorsPageModel {
 }
 
 class AboutPageModel {
-  String aboutPage;
+  String? aboutPage;
 
   AboutPageModel({this.aboutPage});
 

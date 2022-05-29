@@ -1,7 +1,7 @@
-import 'package:epilepsy/models/seizure.dart';
+import 'package:epilepsy/infrastracture/seizure/model/seizure.dart';
 
 class SeizureResponse {
-  List<SeizureModel> data;
+  List<SeizureModel>? data;
 
   SeizureResponse({this.data});
 
@@ -9,7 +9,7 @@ class SeizureResponse {
     if (json['data'] != null) {
       data = <SeizureModel>[];
       json['data'].forEach((v) {
-        data.add(SeizureModel.fromJson(v));
+        data!.add(SeizureModel.fromJson(v));
       });
     }
   }
@@ -17,14 +17,14 @@ class SeizureResponse {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.data != null) {
-      data['data'] = this.data.map((v) => v.toJson()).toList();
+      data['data'] = this.data?.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
 class SeizureStoreResponse {
-  SeizureModel data;
+  SeizureModel? data;
 
   SeizureStoreResponse({this.data});
 
@@ -36,7 +36,7 @@ class SeizureStoreResponse {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.data != null) {
-      data['data'] = this.data.toJson();
+      data['data'] = this.data?.toJson();
     }
     return data;
   }

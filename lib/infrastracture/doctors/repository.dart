@@ -1,7 +1,7 @@
 import 'package:epilepsy/domain/constants/api.dart';
 
 import '../../domain/api_service.dart';
-import '../types/doctors_response.dart';
+import 'models/doctors_response.dart';
 
 class DoctorsRepository {
   static final _dio = ApiService.dio;

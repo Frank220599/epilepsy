@@ -5,8 +5,8 @@ import 'package:epilepsy/infrastracture/session/repository.dart';
 import 'package:epilepsy/infrastracture/session/repository.dart';
 import 'package:get/get.dart';
 
-import '../infrastracture/models/message.dart';
-import '../infrastracture/models/session.dart';
+import '../infrastracture/handbook/model/message.dart';
+import '../infrastracture/session/models/session.dart';
 
 class SessionsController extends GetxController {
   var isSessionsLoading = false.obs;

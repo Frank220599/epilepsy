@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:epilepsy/domain/api_service.dart';
-import 'package:epilepsy/infrastracture/types/login_response.dart';
+import 'package:epilepsy/infrastracture/auth/models/login_response.dart';
 
 import '../../domain/constants/api.dart';
-import '../types/login_verify_response.dart';
+import 'models/login_verify_response.dart';
 
 class AuthRepository {
   static final _dio = ApiService.dio;

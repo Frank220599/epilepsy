@@ -1,9 +1,9 @@
 import 'package:epilepsy/domain/api_service.dart';
 import 'package:epilepsy/domain/constants/api.dart';
-import 'package:epilepsy/infrastracture/models/message.dart';
-import 'package:epilepsy/infrastracture/models/session.dart';
-import 'package:epilepsy/infrastracture/types/messages_response.dart';
-import 'package:epilepsy/infrastracture/types/session_response.dart';
+import 'package:epilepsy/infrastracture/handbook/model/message.dart';
+import 'package:epilepsy/infrastracture/session/models/session.dart';
+import 'package:epilepsy/infrastracture/handbook/model/messages_response.dart';
+import 'package:epilepsy/infrastracture/session/models/session_response.dart';
 import 'package:get/get.dart';
 
 class SessionRepository {

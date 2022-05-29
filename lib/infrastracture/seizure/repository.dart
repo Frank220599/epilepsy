@@ -1,8 +1,8 @@
 import 'package:epilepsy/domain/api_service.dart';
 import 'package:epilepsy/domain/constants/api.dart';
-import 'package:epilepsy/infrastracture/types/tendencies_response.dart';
+import 'package:epilepsy/infrastracture/handbook/model/tendencies_response.dart';
 
-import '../types/seizure_response.dart';
+import 'model/seizure_response.dart';
 
 class SeizureRepository {
   static final _dio = ApiService.dio;

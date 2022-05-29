@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dio/dio.dart' as dio;
 
-import '../infrastracture/models/drug.dart';
+import '../infrastracture/drug/model/drug.dart';
 import 'drug_controller.dart';
 
 class AddDrugController extends GetxController {

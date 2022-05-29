@@ -1,8 +1,8 @@
 import 'package:epilepsy/domain/api_service.dart';
-import 'package:epilepsy/infrastracture/types/rates_response.dart';
+import 'package:epilepsy/infrastracture/handbook/model/rates_response.dart';
 
 import '../../domain/constants/api.dart';
-import '../types/profile_response.dart';
+import 'model/profile_response.dart';
 
 class ProfileRepository {
   static final _dio = ApiService.dio;

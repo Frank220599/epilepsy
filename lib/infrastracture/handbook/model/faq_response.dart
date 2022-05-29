@@ -1,15 +1,15 @@
-import 'package:epilepsy/infrastracture/models/handbook.dart';
+import 'package:epilepsy/infrastracture/handbook/model/faq.dart';
 
-class HandbookResponse {
-  List<HandbookModel>? data;
+class FAQResponse {
+  List<FAQModel>? data;
 
-  HandbookResponse({this.data});
+  FAQResponse({this.data});
 
-  HandbookResponse.fromJson(Map<String, dynamic> json) {
+  FAQResponse.fromJson(Map<String, dynamic> json) {
     if (json['data'] != null) {
-      data = <HandbookModel>[];
+      data = <FAQModel>[];
       json['data'].forEach((v) {
-        data?.add(HandbookModel.fromJson(v));
+        data?.add(FAQModel.fromJson(v));
       });
     }
   }

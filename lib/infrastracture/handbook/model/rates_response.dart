@@ -1,11 +1,11 @@
-import '../models/links.dart';
-import '../models/meta.dart';
-import '../models/rate.dart';
+import 'links.dart';
+import 'meta.dart';
+import 'rate.dart';
 
 class RatesResponse {
-  List<RateModel> data;
-  Links links;
-  Meta meta;
+  List<RateModel>? data;
+  Links? links;
+  Meta? meta;
 
   RatesResponse({this.data, this.links, this.meta});
 
@@ -13,7 +13,7 @@ class RatesResponse {
     if (json['data'] != null) {
       data = <RateModel>[];
       json['data'].forEach((v) {
-        data.add(RateModel.fromJson(v));
+        data!.add(RateModel.fromJson(v));
       });
     }
     links = json['links'] != null ? new Links.fromJson(json['links']) : null;
@@ -23,13 +23,13 @@ class RatesResponse {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.data != null) {
-      data['data'] = this.data.map((v) => v.toJson()).toList();
+      data['data'] = this.data!.map((v) => v.toJson()).toList();
     }
     if (this.links != null) {
-      data['links'] = this.links.toJson();
+      data['links'] = this.links!.toJson();
     }
     if (this.meta != null) {
-      data['meta'] = this.meta.toJson();
+      data['meta'] = this.meta!.toJson();
     }
     return data;
   }

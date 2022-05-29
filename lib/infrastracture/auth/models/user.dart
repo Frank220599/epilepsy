@@ -1,8 +1,8 @@
 class User {
-  String name;
-  String avatar;
-  String birthday;
-  String gender;
+  String? name;
+  String? avatar;
+  String? birthday;
+  String? gender;
   Null experience;
   Null visitingPrice;
   Null regalia;

@@ -1,10 +1,10 @@
 class UserVerify {
-  int id;
-  int userId;
-  String token;
-  String deviceInfo;
-  String loggedAt;
-  String lastSeenAt;
+  int? id;
+  int? userId;
+  String? token;
+  String? deviceInfo;
+  String? loggedAt;
+  String? lastSeenAt;
 
   UserVerify(
       {this.id,

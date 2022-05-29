@@ -1,6 +1,6 @@
 class HandbookModel {
-  int id;
-  String title;
+  int? id;
+  String? title;
 
   HandbookModel({this.id, this.title});
 

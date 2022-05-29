@@ -1,11 +1,11 @@
-import 'package:epilepsy/infrastracture/models/links.dart';
-import 'package:epilepsy/infrastracture/models/meta.dart';
-import '../models/news.dart';
+import 'package:epilepsy/infrastracture/handbook/model/links.dart';
+import 'package:epilepsy/infrastracture/handbook/model/meta.dart';
+import 'news.dart';
 
 class NewsResponse {
-  List<News> data;
-  Links links;
-  Meta meta;
+  List<News>? data;
+  Links? links;
+  Meta? meta;
 
   NewsResponse({this.data, this.links, this.meta});
 
@@ -13,7 +13,7 @@ class NewsResponse {
     if (json['data'] != null) {
       data = <News>[];
       json['data'].forEach((v) {
-        data.add(new News.fromJson(v));
+        data!.add(new News.fromJson(v));
       });
     }
     links = json['links'] != null ? new Links.fromJson(json['links']) : null;
@@ -23,13 +23,13 @@ class NewsResponse {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.data != null) {
-      data['data'] = this.data.map((v) => v.toJson()).toList();
+      data['data'] = this.data!.map((v) => v.toJson()).toList();
     }
     if (this.links != null) {
-      data['links'] = this.links.toJson();
+      data['links'] = this.links!.toJson();
     }
     if (this.meta != null) {
-      data['meta'] = this.meta.toJson();
+      data['meta'] = this.meta!.toJson();
     }
     return data;
   }

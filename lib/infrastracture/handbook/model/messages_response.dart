@@ -1,7 +1,7 @@
-import 'package:epilepsy/infrastracture/models/message.dart';
+import 'package:epilepsy/infrastracture/handbook/model/message.dart';
 
 class MessagesResponse {
-  List<MessageModel> data;
+  List<MessageModel>? data;
 
   MessagesResponse({this.data});
 
@@ -9,7 +9,7 @@ class MessagesResponse {
     if (json['data'] != null) {
       data = <MessageModel>[];
       json['data'].forEach((v) {
-        data.add(new MessageModel.fromJson(v));
+        data?.add(new MessageModel.fromJson(v));
       });
     }
   }
@@ -17,7 +17,7 @@ class MessagesResponse {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.data != null) {
-      data['data'] = this.data.map((v) => v.toJson()).toList();
+      data['data'] = this.data?.map((v) => v.toJson()).toList();
     }
     return data;
   }

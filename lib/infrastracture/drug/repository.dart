@@ -1,8 +1,8 @@
 import 'package:epilepsy/domain/api_service.dart';
 import 'package:epilepsy/domain/constants/api.dart';
-import 'package:epilepsy/infrastracture/models/drug.dart';
+import 'package:epilepsy/infrastracture/drug/model/drug.dart';
 
-import '../types/drug_response.dart';
+import 'model/drug_response.dart';
 
 class DrugRepository {
   static final _dio = ApiService.dio;

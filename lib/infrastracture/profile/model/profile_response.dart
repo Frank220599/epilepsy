@@ -1,5 +1,7 @@
+import '../../auth/models/user.dart';
+
 class ProfileResponse {
-  ProfileData data;
+  ProfileData? data;
 
   ProfileResponse({this.data});
 
@@ -10,16 +12,16 @@ class ProfileResponse {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.data != null) {
-      data['data'] = this.data.toJson();
+      data['data'] = this.data!.toJson();
     }
     return data;
   }
 }
 
 class ProfileData {
-  int id;
-  String phone;
-  User profile;
+  int? id;
+  String? phone;
+  User? profile;
 
   ProfileData({this.id, this.phone, this.profile});
 
@@ -35,7 +37,7 @@ class ProfileData {
     data['id'] = this.id;
     data['phone'] = this.phone;
     if (this.profile != null) {
-      data['profile'] = this.profile.toJson();
+      data['profile'] = this.profile!.toJson();
     }
     return data;
   }

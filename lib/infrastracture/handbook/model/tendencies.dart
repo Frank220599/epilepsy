@@ -1,26 +1,26 @@
 class TendenciesModel {
-  WeekFrequency weekFrequency;
-  WeekFrequency monthFrequency;
-  WeekFrequency yearFrequency;
-  WeekFrequency distributionByHour;
-  WeekFrequency distributionByWeek;
-  WeekFrequency distributionByYear;
-  WeekFrequency weekTypes;
-  WeekFrequency monthTypes;
-  WeekFrequency yearTypes;
-  List<String> typesColors;
-  WeekFrequency weekReasons;
-  WeekFrequency monthReasons;
-  WeekFrequency yearReasons;
-  List<String> reasonColors;
-  WeekFrequency weekActivities;
-  WeekFrequency monthActivities;
-  WeekFrequency yearActivities;
-  List<String> activitiesColors;
-  WeekFrequency weekPlaces;
-  WeekFrequency monthPlaces;
-  WeekFrequency yearPlaces;
-  List<String> placesColors;
+  WeekFrequency? weekFrequency;
+  WeekFrequency? monthFrequency;
+  WeekFrequency? yearFrequency;
+  WeekFrequency? distributionByHour;
+  WeekFrequency? distributionByWeek;
+  WeekFrequency? distributionByYear;
+  WeekFrequency? weekTypes;
+  WeekFrequency? monthTypes;
+  WeekFrequency? yearTypes;
+  List<String>? typesColors;
+  WeekFrequency? weekReasons;
+  WeekFrequency? monthReasons;
+  WeekFrequency? yearReasons;
+  List<String>? reasonColors;
+  WeekFrequency? weekActivities;
+  WeekFrequency? monthActivities;
+  WeekFrequency? yearActivities;
+  List<String>? activitiesColors;
+  WeekFrequency? weekPlaces;
+  WeekFrequency? monthPlaces;
+  WeekFrequency? yearPlaces;
+  List<String>? placesColors;
 
   TendenciesModel({
     this.weekFrequency,
@@ -111,61 +111,61 @@ class TendenciesModel {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.weekFrequency != null) {
-      data['weekFrequency'] = this.weekFrequency.toJson();
+      data['weekFrequency'] = this.weekFrequency?.toJson();
     }
     if (this.monthFrequency != null) {
-      data['monthFrequency'] = this.monthFrequency.toJson();
+      data['monthFrequency'] = this.monthFrequency?.toJson();
     }
     if (this.yearFrequency != null) {
-      data['yearFrequency'] = this.yearFrequency.toJson();
+      data['yearFrequency'] = this.yearFrequency?.toJson();
     }
     if (this.distributionByHour != null) {
-      data['distributionByHour'] = this.distributionByHour.toJson();
+      data['distributionByHour'] = this.distributionByHour?.toJson();
     }
     if (this.distributionByWeek != null) {
-      data['distributionByWeek'] = this.distributionByWeek.toJson();
+      data['distributionByWeek'] = this.distributionByWeek?.toJson();
     }
     if (this.distributionByYear != null) {
-      data['distributionByYear'] = this.distributionByYear.toJson();
+      data['distributionByYear'] = this.distributionByYear?.toJson();
     }
     if (this.weekTypes != null) {
-      data['weekTypes'] = this.weekTypes.toJson();
+      data['weekTypes'] = this.weekTypes?.toJson();
     }
     if (this.monthTypes != null) {
-      data['monthTypes'] = this.monthTypes.toJson();
+      data['monthTypes'] = this.monthTypes?.toJson();
     }
     if (this.yearTypes != null) {
-      data['yearTypes'] = this.yearTypes.toJson();
+      data['yearTypes'] = this.yearTypes?.toJson();
     }
     data['typesColors'] = this.typesColors;
     if (this.weekReasons != null) {
-      data['weekReasons'] = this.weekReasons.toJson();
+      data['weekReasons'] = this.weekReasons?.toJson();
     }
     if (this.monthReasons != null) {
-      data['monthReasons'] = this.monthReasons.toJson();
+      data['monthReasons'] = this.monthReasons?.toJson();
     }
     if (this.yearReasons != null) {
-      data['yearReasons'] = this.yearReasons.toJson();
+      data['yearReasons'] = this.yearReasons?.toJson();
     }
     data['reasonColors'] = this.reasonColors;
     if (this.weekActivities != null) {
-      data['weekActivities'] = this.weekActivities.toJson();
+      data['weekActivities'] = this.weekActivities?.toJson();
     }
     if (this.monthActivities != null) {
-      data['monthActivities'] = this.monthActivities.toJson();
+      data['monthActivities'] = this.monthActivities?.toJson();
     }
     if (this.yearActivities != null) {
-      data['yearActivities'] = this.yearActivities.toJson();
+      data['yearActivities'] = this.yearActivities?.toJson();
     }
     data['activitiesColors'] = this.activitiesColors;
     if (this.weekPlaces != null) {
-      data['weekPlaces'] = this.weekPlaces.toJson();
+      data['weekPlaces'] = this.weekPlaces?.toJson();
     }
     if (this.monthPlaces != null) {
-      data['monthPlaces'] = this.monthPlaces.toJson();
+      data['monthPlaces'] = this.monthPlaces?.toJson();
     }
     if (this.yearPlaces != null) {
-      data['yearPlaces'] = this.yearPlaces.toJson();
+      data['yearPlaces'] = this.yearPlaces?.toJson();
     }
     data['placesColors'] = this.placesColors;
     return data;
@@ -173,8 +173,8 @@ class TendenciesModel {
 }
 
 class WeekFrequency {
-  List<String> labels;
-  List<int> data;
+  List<String>? labels;
+  List<int>? data;
 
   WeekFrequency({this.labels, this.data});
 

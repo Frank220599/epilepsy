@@ -1,21 +1,21 @@
-import 'package:epilepsy/models/doctor.dart';
+import '../../doctors/models/doctor.dart';
 
 class SessionModel {
-  int id;
-  int userId;
-  int doctorId;
-  int unreadCount;
-  String status;
-  String statusText;
-  String statusSessionStatusBackground;
-  String lastActiveAt;
-  String acceptedAt;
-  String rejectedAt;
-  String closedAt;
-  String canceledAt;
-  String createdAt;
-  DoctorModel user;
-  DoctorModel doctor;
+  int? id;
+  int? userId;
+  int? doctorId;
+  int? unreadCount;
+  String? status;
+  String? statusText;
+  String? statusSessionStatusBackground;
+  String? lastActiveAt;
+  String? acceptedAt;
+  String? rejectedAt;
+  String? closedAt;
+  String? canceledAt;
+  String? createdAt;
+  DoctorModel? user;
+  DoctorModel? doctor;
 
   SessionModel({
     this.id,
@@ -72,10 +72,10 @@ class SessionModel {
     data['canceled_at'] = this.canceledAt;
     data['created_at'] = this.createdAt;
     if (this.user != null) {
-      data['user'] = this.user.toJson();
+      data['user'] = this.user?.toJson();
     }
     if (this.doctor != null) {
-      data['doctor'] = this.doctor.toJson();
+      data['doctor'] = this.doctor?.toJson();
     }
     return data;
   }

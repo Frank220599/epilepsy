@@ -1,12 +1,12 @@
-import '../doctors/models/doctor.dart';
+import '../../doctors/models/doctor.dart';
 
 class MessageModel {
-  int id;
-  int userId;
-  String message;
+  int? id;
+  int? userId;
+  String? message;
   Null file;
-  String createdAt;
-  DoctorModel user;
+  String? createdAt;
+  DoctorModel? user;
 
   MessageModel({
     this.id,
@@ -34,7 +34,7 @@ class MessageModel {
     data['file'] = this.file;
     data['created_at'] = this.createdAt;
     if (this.user != null) {
-      data['user'] = this.user.toJson();
+      data['user'] = this.user?.toJson();
     }
     return data;
   }

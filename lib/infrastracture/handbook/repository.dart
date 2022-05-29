@@ -1,11 +1,11 @@
 import 'package:epilepsy/domain/api_service.dart';
 import 'package:epilepsy/domain/constants/api.dart';
-import 'package:epilepsy/infrastracture/models/contacts.dart';
+import 'package:epilepsy/infrastracture/handbook/model/contacts.dart';
 
-import '../models/pages.dart';
-import '../types/faq_response.dart';
-import '../types/handbook_response.dart';
-import '../types/news_response.dart';
+import 'model/pages.dart';
+import 'model/faq_response.dart';
+import 'model/handbook_response.dart';
+import 'model/news_response.dart';
 
 class HandbookRepository {
   static final _dio = ApiService.dio;

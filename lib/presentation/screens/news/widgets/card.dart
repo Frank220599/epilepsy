@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../../domain/config/colors.dart';
 import '../../../../domain/config/styles.dart';
 import '../../../../domain/utils/launch_link.dart';
-import '../../../../infrastracture/models/news.dart';
+import '../../../../infrastracture/handbook/model/news.dart';
 
 class NewsCard extends StatelessWidget {
   final News news;

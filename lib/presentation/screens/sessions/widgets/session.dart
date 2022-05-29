@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../../application/session_controller.dart';
 import '../../../../domain/constants/routes.dart';
-import '../../../../infrastracture/models/session.dart';
+import '../../../../infrastracture/session/models/session.dart';
 import '../../../widgets/app_button.dart';
 
 class Session extends GetView<SessionsController> {

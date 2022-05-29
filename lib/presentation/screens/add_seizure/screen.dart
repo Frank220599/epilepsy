@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import '../../../application/add_seizure_controller.dart';
 import '../../../domain/config/icons.dart';
 import '../../../domain/utils/sizes.dart';
-import '../../../infrastracture/models/seizure.dart';
+import '../../../infrastracture/seizure/model/seizure.dart';
 import '../../widgets/app_button.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_list_tile.dart';

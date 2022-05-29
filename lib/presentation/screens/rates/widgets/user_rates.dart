@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../application/rates_controller.dart';
-import '../../../../infrastracture/models/rate.dart';
+import '../../../../infrastracture/handbook/model/rate.dart';
 
 class UserRates extends GetView<RatesController> {
   const UserRates({Key? key}) : super(key: key);

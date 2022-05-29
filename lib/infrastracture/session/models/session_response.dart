@@ -1,12 +1,12 @@
-import 'package:epilepsy/models/doctor.dart';
-import 'package:epilepsy/models/links.dart';
-import 'package:epilepsy/models/meta.dart';
-import 'package:epilepsy/models/session.dart';
+import 'package:epilepsy/infrastracture/session/models/session.dart';
+
+import '../../handbook/model/links.dart';
+import '../../handbook/model/meta.dart';
 
 class SessionResponse {
-  List<SessionModel> data;
-  Links links;
-  Meta meta;
+  List<SessionModel>? data;
+  Links? links;
+  Meta? meta;
 
   SessionResponse({this.data, this.links, this.meta});
 
@@ -14,7 +14,7 @@ class SessionResponse {
     if (json['data'] != null) {
       data = <SessionModel>[];
       json['data'].forEach((v) {
-        data.add(SessionModel.fromJson(v));
+        data?.add(SessionModel.fromJson(v));
       });
     }
     links = json['links'] != null ? new Links.fromJson(json['links']) : null;
@@ -24,13 +24,13 @@ class SessionResponse {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.data != null) {
-      data['data'] = this.data.map((v) => v.toJson()).toList();
+      data['data'] = this.data?.map((v) => v.toJson()).toList();
     }
     if (this.links != null) {
-      data['links'] = this.links.toJson();
+      data['links'] = this.links?.toJson();
     }
     if (this.meta != null) {
-      data['meta'] = this.meta.toJson();
+      data['meta'] = this.meta?.toJson();
     }
     return data;
   }

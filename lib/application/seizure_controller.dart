@@ -3,8 +3,8 @@ import 'package:epilepsy/infrastracture/seizure/repository.dart';
 import 'package:epilepsy/infrastracture/seizure/repository.dart';
 import 'package:get/get.dart';
 
-import '../infrastracture/models/seizure.dart';
-import '../infrastracture/models/tendencies.dart';
+import '../infrastracture/seizure/model/seizure.dart';
+import '../infrastracture/handbook/model/tendencies.dart';
 
 class ObservableList<T> {
   var isLoading = true.obs;

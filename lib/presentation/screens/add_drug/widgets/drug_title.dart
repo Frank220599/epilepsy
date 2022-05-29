@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../../application/add_drug_controller.dart';
 import '../../../../domain/config/styles.dart';
-import '../../../../infrastracture/models/drug.dart';
+import '../../../../infrastracture/drug/model/drug.dart';
 
 class DrugTitle extends GetView<AddDrugController> {
   final DrugModel drug = Get.arguments;
@@ -11,7 +11,7 @@ class DrugTitle extends GetView<AddDrugController> {
   @override
   Widget build(BuildContext context) {
     if (drug != null) {
-      tC.text = drug.title;
+      tC.text = drug.title!;
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
