@@ -1,7 +1,4 @@
 import 'package:epilepsy/infrastracture/drug/repository.dart';
-import 'package:epilepsy/infrastracture/drug/repository.dart';
-import 'package:epilepsy/infrastracture/drug/repository.dart';
-import 'package:epilepsy/infrastracture/drug/repository.dart';
 import 'package:get/get.dart';
 
 import '../infrastracture/drug/model/drug.dart';

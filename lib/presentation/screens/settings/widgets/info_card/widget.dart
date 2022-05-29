@@ -10,9 +10,9 @@ class InfoCard extends GetView<ProfileController> {
   @override
   Widget build(BuildContext context) {
     final data = controller.profile();
-    String codeArea = data.phone.substring(0, 3);
-    String codeCompany = data.phone.substring(3, 5);
-    String number = data.phone.substring(5);
+    String codeArea = data.phone!.substring(0, 3);
+    String codeCompany = data.phone!.substring(3, 5);
+    String number = data.phone!.substring(5);
     String formattedPhoneNumber = '+$codeArea ($codeCompany) $number';
     return Container(
       padding: const EdgeInsets.all(15.0),

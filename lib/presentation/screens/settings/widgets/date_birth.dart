@@ -19,7 +19,7 @@ class _DateOfBirthState extends State<DateOfBirth> {
   @override
   void initState() {
     setState(() {
-      date = controller.profile().profile.birthday ?? '';
+      date = controller.profile().profile!.birthday ?? '';
     });
     super.initState();
   }
@@ -35,7 +35,7 @@ class _DateOfBirthState extends State<DateOfBirth> {
       );
       final normalizedDate = selectedDate.toString().split(' ')[0];
       if (normalizedDate != 'null') {
-        controller.profile().profile.birthday = normalizedDate;
+        controller.profile().profile!.birthday = normalizedDate;
         setState(() {
           date = normalizedDate;
         });

@@ -1,12 +1,4 @@
 import 'package:epilepsy/infrastracture/handbook/repository.dart';
-import 'package:epilepsy/infrastracture/handbook/repository.dart';
-import 'package:epilepsy/infrastracture/handbook/repository.dart';
-import 'package:epilepsy/infrastracture/handbook/repository.dart';
-import 'package:epilepsy/infrastracture/handbook/repository.dart';
-import 'package:epilepsy/infrastracture/handbook/repository.dart';
-import 'package:epilepsy/infrastracture/handbook/repository.dart';
-import 'package:epilepsy/infrastracture/handbook/repository.dart';
-import 'package:epilepsy/infrastracture/handbook/repository.dart';
 import 'package:epilepsy/infrastracture/handbook/model/handbook.dart';
 import 'package:get/get.dart';
 

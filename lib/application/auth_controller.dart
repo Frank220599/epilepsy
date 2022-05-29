@@ -47,7 +47,7 @@ class AuthController extends GetxController {
       final data = await AuthRepository.login(
         phone: normalizedPhone,
       );
-      Get.toNamed(ROUTES.LOGIN_CONFIRMATION, arguments: data.data.userId);
+      Get.toNamed(ROUTES.LOGIN_CONFIRMATION, arguments: data.data!.userId);
       startInterval();
     } catch (e) {
       Get.snackbar('Ошибка', e.toString());
@@ -65,7 +65,7 @@ class AuthController extends GetxController {
         userId: Get.arguments,
         payload: payload,
       );
-      DeviceStorage.token = data.data!.token;
+      DeviceStorage.token = data.data!.token!;
       Get.put(ProfileController(), permanent: true);
       timer?.cancel();
       Get.offAllNamed(ROUTES.HOME);

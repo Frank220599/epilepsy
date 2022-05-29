@@ -43,7 +43,7 @@ class NewsCard extends StatelessWidget {
             margin: const EdgeInsets.only(bottom: 15.0),
             width: double.infinity,
             child: Image.network(
-              news.image,
+              news.image!,
               width: double.infinity,
               height: 150.0,
               fit: BoxFit.cover,
@@ -53,7 +53,7 @@ class NewsCard extends StatelessWidget {
             width: 300.0,
             margin: const EdgeInsets.only(bottom: 15.0),
             child: Text(
-              news.short,
+              news.short!,
               softWrap: true,
               style: TextStyles.newsText,
             ),
@@ -75,7 +75,7 @@ class NewsCard extends StatelessWidget {
                     style: TextStyles.newsButton,
                   ),
                   style: ElevatedButton.styleFrom(
-                    side: BorderSide(color: Palette.purple, width: 1.0),
+                    side: const BorderSide(color: Palette.purple, width: 1.0),
                     elevation: 0.0,
                     primary: Palette.scaffoldBackgorund,
                     shape: RoundedRectangleBorder(

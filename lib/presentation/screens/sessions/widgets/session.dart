@@ -26,13 +26,13 @@ class Session extends GetView<SessionsController> {
         onPressed: () {
           if (data.status == 'new') {
             controller.changeSessionStatus(
-              id: data.id,
+              id: data.id!,
               status: 'canceled',
             );
           }
           if (data.status == 'opened') {
             controller.changeSessionStatus(
-              id: data.id,
+              id: data.id!,
               status: 'closed',
             );
           }
@@ -95,15 +95,15 @@ class Session extends GetView<SessionsController> {
                   margin: const EdgeInsets.only(right: 20),
                   child: Image(
                     width: 50,
-                    image: NetworkImage(data.doctor.profile.avatar),
+                    image: NetworkImage(data.doctor!.profile!.avatar!),
                   ),
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _buildInfo(
-                      label: data.doctor.profile.name,
-                      text: 'Cтатус: ' + data.statusText,
+                      label: data.doctor!.profile!.name,
+                      text: 'Cтатус: ' + data.statusText!,
                     ),
                   ],
                 ),

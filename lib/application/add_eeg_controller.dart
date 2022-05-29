@@ -26,7 +26,7 @@ class AddEegController extends GetxController {
       });
       final data = await EegRepository.eegStore(formData);
       final controller = Get.find<EegController>();
-      controller.eegList.data.insert(0, data.data);
+      controller.eegList.data.insert(0, data.data!);
       Get.back();
     } catch (e) {
       throw Exception(e);
@@ -53,7 +53,8 @@ class AddEegController extends GetxController {
         if (imgFile != null) 'image': imgFile
       });
 
-      final data = await EegRepository.eegUpdate(id: eeg.id, payload: formData);
+      final data =
+          await EegRepository.eegUpdate(id: eeg.id!, payload: formData);
       final controller = Get.find<EegController>();
       var newData = controller.eegList.data.map((element) {
         if (element.id == eeg.id) {
@@ -61,7 +62,7 @@ class AddEegController extends GetxController {
         }
         return element;
       });
-      controller.eegList.data.value = newData.toList();
+      controller.eegList.data.value = newData.toList() as List<EegModel>;
       Get.back();
     } catch (e) {
       throw Exception(e);

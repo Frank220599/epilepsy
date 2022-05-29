@@ -1,7 +1,5 @@
 import 'dart:convert';
 import 'package:epilepsy/infrastracture/profile/repository.dart';
-import 'package:epilepsy/infrastracture/profile/repository.dart';
-import 'package:epilepsy/infrastracture/profile/repository.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dio/dio.dart' as dio;
@@ -54,7 +52,7 @@ class ProfileController extends GetxController {
   Future<void> updateProfile() async {
     try {
       isUpdateLoading.toggle();
-      final payload = profile().profile.toJson();
+      final payload = profile().profile!.toJson();
       payload.remove('avatar');
       final data = await ProfileRepository.updateProfile(payload);
       Get.snackbar('successfully'.tr, 'updated'.tr);
@@ -71,7 +69,7 @@ class ProfileController extends GetxController {
       isAvatarLoading.toggle();
       String fileName = avatar().path.split('/').last;
       dio.FormData formData = dio.FormData.fromMap({
-        ...profile.value.profile.toJson(),
+        ...profile.value.profile!.toJson(),
         "avatar": await dio.MultipartFile.fromFile(
           avatar().path,
           filename: fileName,

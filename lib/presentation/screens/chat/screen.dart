@@ -36,13 +36,13 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.only(bottom: 20),
+        padding: const EdgeInsets.only(bottom: 20),
         child: Column(
           children: [
             Expanded(
               child: Obx(() {
                 if (controller.isMessagesLoading()) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 } else if (!controller.isMessagesLoading() &&
                     controller.isMessagesError()) {
                   return Text('errorTryAgain'.tr);
@@ -57,18 +57,18 @@ class _ChatScreenState extends State<ChatScreen> {
                   itemCount: controller.messages.length,
                   itemBuilder: (context, index) {
                     final item = controller.messages[index];
-                    final time = item.createdAt.split(' ')[1];
+                    final time = item.createdAt!.split(' ')[1];
                     final bool isMe =
                         Get.find<ProfileController>().profile.value.id ==
                             item.userId;
                     if (isMe) {
                       return Operator(
-                        text: item.message,
+                        text: item.message!,
                         time: time,
                       );
                     }
                     return ClientSide(
-                      text: item.message,
+                      text: item.message!,
                       time: time,
                     );
                   },
@@ -77,7 +77,7 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
             Container(
               height: 48,
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 left: 15,
                 right: 15,
                 bottom: 22,
@@ -87,9 +87,9 @@ class _ChatScreenState extends State<ChatScreen> {
                 borderRadius: BorderRadius.circular(10.0),
                 color: const Color(0xfffbf9f9),
                 border: Border.all(width: 2.0, color: const Color(0xffffffff)),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
-                    color: const Color(0x1a303030),
+                    color: Color(0x1a303030),
                     offset: Offset(0, 5),
                     blurRadius: 10,
                   ),

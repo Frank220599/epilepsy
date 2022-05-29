@@ -97,7 +97,7 @@ class _TypeSelectModalState extends State<TypeSelectModal> {
             child: ListView.builder(
               itemBuilder: (context, index) {
                 return LanguageItem(
-                  title: data[index].title,
+                  title: data[index].title!,
                   onChange: () {
                     setState(() {
                       selectedValue = data[index].title;

@@ -46,7 +46,7 @@ class Doctor extends StatelessWidget {
                 margin: const EdgeInsets.only(right: 20),
                 child: Image(
                   width: 100,
-                  image: NetworkImage(data.profile.avatar),
+                  image: NetworkImage(data.profile!.avatar!),
                 ),
               ),
               Column(
@@ -54,11 +54,11 @@ class Doctor extends StatelessWidget {
                 children: [
                   _buildInfo(
                     label: 'ФИО',
-                    text: data.profile.name,
+                    text: data.profile!.name,
                   ),
                   _buildInfo(
                     label: 'Стаж',
-                    text: data.profile.experience,
+                    text: data.profile!.experience,
                   ),
                 ],
               ),

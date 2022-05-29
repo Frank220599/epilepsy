@@ -1,4 +1,5 @@
 import 'package:epilepsy/application/seizure_controller.dart';
+import 'package:epilepsy/infrastracture/seizure/model/seizure.dart';
 import 'package:epilepsy/infrastracture/seizure/repository.dart';
 import 'package:get/get.dart';
 
@@ -48,10 +49,11 @@ class AddSeizureController extends GetxController {
           }
           return element;
         });
-        controller.lastThree.data.value = newData.toList();
+        controller.lastThree.data.value =
+            newData.toList() as List<SeizureModel>;
       } else {
         final data = await SeizureRepository.seizureStore(payload);
-        controller.lastThree.data.insert(0, data.data);
+        controller.lastThree.data.insert(0, data.data!);
       }
       Get.back();
     } catch (e) {

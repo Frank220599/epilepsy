@@ -12,7 +12,7 @@ class Body extends GetView<HandBookController> {
       () {
         var news = controller.news;
         if (news.isLoading.value) {
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         } else if (!news.isLoading.value && !news.isError.value) {
@@ -34,7 +34,7 @@ class Body extends GetView<HandBookController> {
                       const SizedBox(height: 20.0),
                   itemBuilder: (context, index) {
                     final item = news.data[index];
-                    final date = DateFormat('dd.M.yyyy').parse(item.date);
+                    final date = DateFormat('dd.M.yyyy').parse(item.date!);
                     final formattedDate = DateFormat(
                       'dd MMMM yyyy',
                       'ru_RU',

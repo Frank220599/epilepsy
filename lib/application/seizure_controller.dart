@@ -1,6 +1,4 @@
 import 'package:epilepsy/infrastracture/seizure/repository.dart';
-import 'package:epilepsy/infrastracture/seizure/repository.dart';
-import 'package:epilepsy/infrastracture/seizure/repository.dart';
 import 'package:get/get.dart';
 
 import '../infrastracture/seizure/model/seizure.dart';
@@ -47,7 +45,7 @@ class SeizureController extends GetxController {
     try {
       statistics = ObservableList<TendenciesModel>();
       final data = await SeizureRepository.getStatistics();
-      statistics.data.add(data.data);
+      statistics.data.add(data.data!);
     } catch (e) {
       statistics.isError(true);
       throw Exception(e);

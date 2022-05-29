@@ -30,7 +30,7 @@ class Body extends GetView<EegController> {
             itemBuilder: (context, index) {
               final eegModel = eeg.data[index];
               // initializeDateFormatting();
-              final date = DateFormat('dd.M.yyyy').parse(eegModel.date);
+              final date = DateFormat('dd.M.yyyy').parse(eegModel.date!);
               final formattedDate =
                   DateFormat('dd MMMM yyyy', 'ru_RU').format(date);
               return EEGCard(

@@ -33,7 +33,7 @@ class UserRates extends GetView<RatesController> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            data.title,
+            data.title!,
             style: const TextStyle(
               fontFamily: 'SF UI Display',
               fontSize: 25,
@@ -77,7 +77,7 @@ class UserRates extends GetView<RatesController> {
                 ),
               ),
               Text(
-                data.expiredAt,
+                data.expiredAt!,
                 style: const TextStyle(
                   fontFamily: 'SF UI Display',
                   fontSize: 16,

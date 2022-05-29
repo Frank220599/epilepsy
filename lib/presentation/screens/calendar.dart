@@ -201,12 +201,12 @@ class CalendarScreen extends GetView<SeizureController> {
                           arguments: item,
                         ),
                         child: SeizureCard(
-                          date: item.date.split(' '),
-                          duration: item.duration,
-                          activity: item.activity,
-                          type: item.place,
-                          reason: item.reason,
-                          place: item.place,
+                          date: item.date!.split(' '),
+                          duration: item.duration!,
+                          activity: item.activity!,
+                          type: item.place!,
+                          reason: item.reason!,
+                          place: item.place!,
                         ),
                       ),
                     );

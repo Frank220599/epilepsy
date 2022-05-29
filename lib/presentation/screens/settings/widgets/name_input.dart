@@ -9,7 +9,7 @@ class NameInput extends GetView<ProfileController> {
   @override
   Widget build(BuildContext context) {
     final tdController = TextEditingController(
-      text: controller.profile.value.profile.name,
+      text: controller.profile.value.profile!.name,
     );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,13 +29,13 @@ class NameInput extends GetView<ProfileController> {
             boxShadow: BoxStyles.boxInnerShadow,
           ),
           child: TextField(
-            onChanged: (val) => controller.profile().profile.name = val,
+            onChanged: (val) => controller.profile().profile!.name = val,
             controller: tdController,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               border: InputBorder.none,
               isDense: true,
               isCollapsed: true,
-              contentPadding: const EdgeInsets.all(18.0),
+              contentPadding: EdgeInsets.all(18.0),
               hintText: 'enterFio',
               hintStyle: TextStyles.subTitle,
             ),

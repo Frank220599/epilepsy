@@ -1,7 +1,4 @@
-import 'package:epilepsy/infrastracture/session/repository.dart';
-import 'package:epilepsy/infrastracture/session/repository.dart';
-import 'package:epilepsy/infrastracture/session/repository.dart';
-import 'package:epilepsy/infrastracture/session/repository.dart';
+import 'package:epilepsy/domain/constants/routes.dart';
 import 'package:epilepsy/infrastracture/session/repository.dart';
 import 'package:get/get.dart';
 

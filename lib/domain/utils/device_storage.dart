@@ -3,10 +3,10 @@ import 'package:get_storage/get_storage.dart';
 class DeviceStorage {
   static final box = GetStorage();
 
-  static get token => box.read('TOKEN');
-  static get profile => box.read('PROFILE');
-  static get isFirstLaunch => box.read('IS_FIRST_LAUNCH');
-  static get locale => box.read('LOCALE');
+  static String get token => box.read('TOKEN');
+  static String get profile => box.read('PROFILE');
+  static bool get isFirstLaunch => box.read('IS_FIRST_LAUNCH');
+  static String get locale => box.read('LOCALE');
 
   static set token(String value) => box.write('TOKEN', value);
   static set profile(String value) => box.write('PROFILE', value);

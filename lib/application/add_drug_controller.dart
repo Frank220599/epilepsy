@@ -79,7 +79,7 @@ class AddDrugController extends GetxController {
       });
 
       final data =
-          await DrugRepository.drugUpdate(id: drug.id, payload: formData);
+          await DrugRepository.drugUpdate(id: drug.id!, payload: formData);
       final controller = Get.find<DrugController>();
       var newData = controller.drugs.data.map((element) {
         if (element.id == drug.id) {
@@ -87,7 +87,7 @@ class AddDrugController extends GetxController {
         }
         return element;
       });
-      controller.drugs.data.value = newData.toList();
+      controller.drugs.data.value = newData.toList() as List<DrugModel>;
       Get.back();
     } catch (e) {
       throw Exception(e);

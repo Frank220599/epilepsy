@@ -16,7 +16,7 @@ class Rates extends StatefulWidget {
 }
 
 class _RatesState extends State<Rates> {
-  int userId = Get.find<ProfileController>().profile.value.id;
+  int userId = Get.find<ProfileController>().profile.value.id!;
   final controller = Get.find<RatesController>();
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();

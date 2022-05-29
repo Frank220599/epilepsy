@@ -66,12 +66,12 @@ class HomeScreen extends StatelessWidget {
                       ZoomDrawer.of(context)?.close();
                     },
                     child: SeizureCard(
-                      type: item.type,
-                      reason: item.reason,
-                      date: item.date.split(' '),
-                      duration: item.duration,
-                      place: item.place,
-                      activity: item.activity,
+                      type: item.type!,
+                      reason: item.reason!,
+                      date: item.date!.split(' '),
+                      duration: item.duration!,
+                      place: item.place!,
+                      activity: item.activity!,
                     ),
                   );
                 },
