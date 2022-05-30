@@ -1,3 +1,4 @@
+import 'package:epilepsy/infrastracture/drug/model/drug.dart';
 import 'package:epilepsy/infrastracture/seizure/model/seizure.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -6,7 +7,7 @@ import '../../../../domain/config/styles.dart';
 
 class Comment extends StatelessWidget {
   final Function(String) onChange;
-  final SeizureModel? drug = Get.arguments;
+  final DrugModel? drug = Get.arguments;
   final tC = TextEditingController();
 
   Comment({Key? key, required this.onChange}) : super(key: key);
@@ -15,9 +16,9 @@ class Comment extends StatelessWidget {
   Widget build(BuildContext context) {
     if (drug != null) {
       try {
-        // tC.text = drug?.comment ?? '';
+        tC.text = drug?.comment ?? '';
       } catch (E) {
-        tC.text = drug?.notice ?? '';
+        // tC.text = drug?.notice ?? '';
       }
     }
     return Column(

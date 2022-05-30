@@ -43,17 +43,19 @@ class AddSeizureController extends GetxController {
           id: seizure.id,
           payload: payload,
         );
-        var newData = controller.lastThree.data.map((element) {
+
+        final List<SeizureModel> newData =
+            controller.lastThree.data.map((element) {
           if (element.id == seizure.id) {
             return data.data;
           }
           return element;
-        });
-        controller.lastThree.data.value =
-            newData.toList() as List<SeizureModel>;
+        }).toList();
+
+        controller.lastThree.data.value = newData;
       } else {
         final data = await SeizureRepository.seizureStore(payload);
-        controller.lastThree.data.insert(0, data.data!);
+        controller.lastThree.data.insert(0, data.data);
       }
       Get.back();
     } catch (e) {

@@ -2,53 +2,29 @@ import 'package:epilepsy/infrastracture/drug/model/drug.dart';
 import 'package:epilepsy/infrastracture/handbook/model/links.dart';
 import 'package:epilepsy/infrastracture/handbook/model/meta.dart';
 
-class DrugResponse {
-  List<DrugModel>? data;
-  Links? links;
-  Meta? meta;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  DrugResponse({this.data, this.links, this.meta});
+part 'drug_response.freezed.dart';
+part 'drug_response.g.dart';
 
-  DrugResponse.fromJson(Map<String, dynamic> json) {
-    if (json['data'] != null) {
-      data = <DrugModel>[];
-      json['data'].forEach((v) {
-        data!.add(DrugModel.fromJson(v));
-      });
-    }
-    links = json['links'] != null ? Links.fromJson(json['links']) : null;
-    meta = json['meta'] != null ? Meta.fromJson(json['meta']) : null;
-  }
+@freezed
+class DrugResponse with _$DrugResponse {
+  const factory DrugResponse({
+    required List<DrugModel> data,
+    required Links links,
+    required Meta meta,
+  }) = _DrugResponse;
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    if (this.data != null) {
-      data['data'] = this.data!.map((v) => v.toJson()).toList();
-    }
-    if (links != null) {
-      data['links'] = links!.toJson();
-    }
-    if (meta != null) {
-      data['meta'] = meta!.toJson();
-    }
-    return data;
-  }
+  factory DrugResponse.fromJson(Map<String, dynamic> json) =>
+      _$DrugResponseFromJson(json);
 }
 
-class DrugStoreResponse {
-  DrugModel? data;
+@freezed
+class DrugStoreResponse with _$DrugStoreResponse {
+  const factory DrugStoreResponse({
+    DrugModel? data,
+  }) = _DrugStoreResponse;
 
-  DrugStoreResponse({this.data});
-
-  DrugStoreResponse.fromJson(Map<String, dynamic> json) {
-    data = json['data'] != null ? DrugModel.fromJson(json['data']) : null;
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    if (this.data != null) {
-      data['data'] = this.data!.toJson();
-    }
-    return data;
-  }
+  factory DrugStoreResponse.fromJson(Map<String, dynamic> json) =>
+      _$DrugStoreResponseFromJson(json);
 }

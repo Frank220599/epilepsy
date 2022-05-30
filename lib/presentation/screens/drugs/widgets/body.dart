@@ -13,7 +13,7 @@ class Body extends GetView<DrugController> {
       var drugs = controller.drugs;
       getWidget() {
         if (drugs.isLoading.value) {
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(
               color: Palette.purple,
             ),

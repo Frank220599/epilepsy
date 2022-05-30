@@ -72,7 +72,7 @@ class CustomDrawer extends GetView<ProfileController> {
       10: {
         'icon': AppIcons.support,
         'text': 'support'.tr,
-        'url': hdController.contacts().supportLink,
+        'url': hdController.contacts.value.supportLink,
       },
       11: {
         'icon': AppIcons.faq,

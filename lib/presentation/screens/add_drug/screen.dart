@@ -21,14 +21,14 @@ class AddDrugScreen extends StatefulWidget {
 
 class _AddDrugScreenState extends State<AddDrugScreen> {
   final controller = Get.put(AddDrugController());
-  final DrugModel drug = Get.arguments;
+  final DrugModel? drug = Get.arguments;
 
   @override
   void initState() {
     if (drug != null) {
       final set = controller;
-      set.dateStart(drug.dateStart);
-      set.dateEnd(drug.dateEnd);
+      set.dateStart(drug?.dateStart ?? '');
+      set.dateEnd(drug?.dateEnd ?? '');
     }
     super.initState();
   }
@@ -113,7 +113,7 @@ class _AddDrugScreenState extends State<AddDrugScreen> {
                             title: 'attachPhoto'.tr,
                           ),
                           Obx(() {
-                            final img = isEdit ? drug.image : null;
+                            final img = isEdit ? drug?.image : null;
                             return Column(
                               children: [
                                 if (img != null &&

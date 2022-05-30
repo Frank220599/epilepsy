@@ -14,7 +14,7 @@ class DrugController extends GetxController {
 
   var isDrugDetailsLoading = false.obs;
   var isDrugDetailsError = false.obs;
-  var drugDetailsData = DrugModel().obs;
+  var drugDetailsData = DrugModel(id: 0, title: '').obs;
 
   Future<void> getDrugList() async {
     try {

@@ -49,7 +49,6 @@ class SimplePieChart extends StatelessWidget {
                 fontFamily: 'SF UI Display',
                 fontSize: 16,
                 color: Color(0xff0e3062),
-                letterSpacing: 0.004480000019073486,
                 fontWeight: FontWeight.w600,
               ),
               textAlign: TextAlign.left,
@@ -80,8 +79,8 @@ class SimplePieChart extends StatelessWidget {
 
     return [
       charts.Series<OrdinalSales, String>(
-        id: 'Sales',
-        colorFn: (_, __) => charts.MaterialPalette.blue.shadeDefault,
+        id: 'Sales1',
+        labelAccessorFn: (row, _) => '${row.label}: ${row.data}',
         domainFn: (OrdinalSales sales, _) => sales.label,
         measureFn: (OrdinalSales sales, _) => sales.data,
         data: data,

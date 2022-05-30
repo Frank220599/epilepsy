@@ -1,41 +1,22 @@
-class DrugModel {
-  int? id;
-  String? title;
-  String? dosage;
-  String? dateStart;
-  String? dateEnd;
-  String? image;
-  String? comment;
+// ignore_for_file: invalid_annotation_target
 
-  DrugModel({
-    this.id,
-    this.title,
-    this.dosage,
-    this.dateStart,
-    this.dateEnd,
-    this.image,
-    this.comment,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  DrugModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    title = json['title'];
-    dosage = json['dosage'];
-    dateStart = json['date_start'];
-    dateEnd = json['date_end'];
-    image = json['image'];
-    comment = json['comment'];
-  }
+part 'drug.freezed.dart';
+part 'drug.g.dart';
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['title'] = this.title;
-    data['dosage'] = this.dosage;
-    data['date_start'] = this.dateStart;
-    data['date_end'] = this.dateEnd;
-    data['image'] = this.image;
-    data['comment'] = this.comment;
-    return data;
-  }
+@freezed
+class DrugModel with _$DrugModel {
+  factory DrugModel({
+    required int id,
+    required String title,
+    String? dosage,
+    @JsonKey(name: 'date_start') String? dateStart,
+    @JsonKey(name: 'date_end') String? dateEnd,
+    String? image,
+    String? comment,
+  }) = _DrugModel;
+
+  factory DrugModel.fromJson(Map<String, dynamic> json) =>
+      _$DrugModelFromJson(json);
 }

@@ -6,12 +6,12 @@ import '../../../../domain/config/styles.dart';
 import '../../../../infrastracture/drug/model/drug.dart';
 
 class Dosage extends GetView<AddDrugController> {
-  final DrugModel drug = Get.arguments;
+  final DrugModel? drug = Get.arguments;
   final tC = TextEditingController();
   @override
   Widget build(BuildContext context) {
     if (drug != null) {
-      tC.text = drug.dosage!;
+      tC.text = drug!.dosage ?? '';
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,15 +28,17 @@ class Dosage extends GetView<AddDrugController> {
             boxShadow: BoxStyles.boxInnerShadow,
             borderRadius: BorderRadius.circular(10),
           ),
-          margin: EdgeInsets.only(bottom: 20),
+          margin: const EdgeInsets.only(bottom: 20),
           child: TextField(
             onChanged: (val) => controller.dosage = val,
             controller: tC,
             maxLines: 4,
             decoration: InputDecoration(
               border: InputBorder.none,
-              contentPadding:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 15.0),
+              contentPadding: const EdgeInsets.symmetric(
+                vertical: 8.0,
+                horizontal: 15.0,
+              ),
               focusedBorder: InputBorder.none,
               enabledBorder: InputBorder.none,
               errorBorder: InputBorder.none,

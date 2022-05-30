@@ -5,7 +5,7 @@ import '../../../application/eeg_controller.dart';
 import '../../../domain/config/icons.dart';
 import '../../../domain/utils/sizes.dart';
 import '../../widgets/custom_app_bar.dart';
-import '../add_eeg/widgets/body.dart';
+import './widgets/body.dart';
 
 class EEGScreen extends StatelessWidget {
   final eegController = Get.put(EegController());

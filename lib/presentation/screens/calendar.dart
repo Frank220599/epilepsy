@@ -12,25 +12,29 @@ import '../../domain/utils/sizes.dart';
 import '../widgets/custom_app_bar.dart';
 import 'home/widgets/seizure_card.dart';
 
-class CalendarScreen extends GetView<SeizureController> {
-  const CalendarScreen({Key? key}) : super(key: key);
+class CalendarScreen extends StatefulWidget {
+  CalendarScreen({Key? key}) : super(key: key);
+
+  @override
+  State<CalendarScreen> createState() => _CalendarScreenState();
+}
+
+class _CalendarScreenState extends State<CalendarScreen> {
+  var selected = DateTime.now();
+  final controller = Get.find<SeizureController>();
 
   String formatDate(DateTime date) {
     return date.toString().split(' ')[0];
   }
 
-  void _onDaySelected(DateTime day, List events, List holidays) {
-    controller.getSeizureByDate(formatDate(day));
+  _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
+    controller.getSeizureByDate(formatDate(selectedDay));
+    setState(() {
+      selected = selectedDay;
+    });
   }
 
-  void _onVisibleDaysChanged(
-      DateTime first, DateTime last, CalendarFormat format) {}
-
-  void _onCalendarCreated(
-    DateTime first,
-    DateTime last,
-    CalendarFormat format,
-  ) {
+  _onCalendarCreated(PageController pageController) {
     controller.getSeizureByDate(formatDate(DateTime.now()));
   }
 
@@ -79,23 +83,10 @@ class CalendarScreen extends GetView<SeizureController> {
             fontSize: 13.0,
           ),
         ),
-        // calendarStyle: CalendarStyle(
-        //   selectedColor: Palette.calendarSelected,
-        //   weekendStyle: TextStyle(color: Colors.black, fontSize: 17.0),
-        //   weekdayStyle: TextStyle(color: Colors.black, fontSize: 17.0),
-        //   todayColor: Colors.deepOrange[200],
-        //   markersColor: Palette.calendarMarker,
-        //   outsideDaysVisible: true,
-        //   outsideWeekendStyle: TextStyle(
-        //     color: Palette.calendarOutDays,
-        //     fontSize: 17.0,
-        //   ),
-        //   markersAlignment: Alignment.topRight,
-        //   markersMaxAmount: 1,
-        //   markersPositionTop: -30,
-        //   markersPositionRight: 5,
-        //   markersPositionBottom: 0,
-        // ),
+        calendarStyle: const CalendarStyle(
+          outsideDaysVisible: true,
+          markersAlignment: Alignment.topRight,
+        ),
         headerStyle: HeaderStyle(
           headerPadding: const EdgeInsets.symmetric(
             horizontal: 0,
@@ -132,7 +123,7 @@ class CalendarScreen extends GetView<SeizureController> {
               )
             ],
           ),
-          // centerHeaderTitle: true,
+          titleCentered: true,
           formatButtonVisible: false,
           leftChevronIcon: const Icon(
             EpilepsyIcons.left_open,
@@ -145,12 +136,12 @@ class CalendarScreen extends GetView<SeizureController> {
             color: Palette.grey,
           ),
         ),
-        focusedDay: DateTime.now(),
-        lastDay: DateTime.now()..add(const Duration(days: 365)),
-        firstDay: DateTime.now(),
-        // onDaySelected: _onDaySelected,
-        // onVisibleDaysChanged: _onVisibleDaysChanged,
-        // onCalendarCreated: _onCalendarCreated,
+        lastDay: DateTime.now().add(const Duration(days: 365)),
+        firstDay: DateTime.now().subtract(const Duration(days: 365)),
+        onDaySelected: _onDaySelected,
+        onCalendarCreated: _onCalendarCreated,
+        focusedDay: selected,
+        currentDay: selected,
       ),
     );
   }
@@ -201,12 +192,12 @@ class CalendarScreen extends GetView<SeizureController> {
                           arguments: item,
                         ),
                         child: SeizureCard(
-                          date: item.date!.split(' '),
-                          duration: item.duration!,
-                          activity: item.activity!,
-                          type: item.place!,
+                          date: item.date.split(' '),
+                          duration: item.duration,
+                          activity: item.activity,
+                          type: item.place,
                           reason: item.reason!,
-                          place: item.place!,
+                          place: item.place,
                         ),
                       ),
                     );

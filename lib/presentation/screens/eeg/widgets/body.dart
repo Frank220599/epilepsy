@@ -14,7 +14,7 @@ class Body extends GetView<EegController> {
         final eeg = controller.eegList;
         getWidget() {
           if (eeg.isLoading.value) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           } else if (!eeg.isLoading() && !eeg.isError() && eeg.data.isEmpty) {
