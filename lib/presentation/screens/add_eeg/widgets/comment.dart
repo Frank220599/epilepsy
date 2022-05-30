@@ -6,12 +6,12 @@ import '../../../../domain/config/styles.dart';
 import '../../../../infrastracture/egg/models/eeg.dart';
 
 class Comment extends GetView<AddEegController> {
-  final EegModel eeg = Get.arguments;
+  final EegModel? eeg = Get.arguments;
   final tC = TextEditingController();
   @override
   Widget build(BuildContext context) {
     if (eeg != null) {
-      tC.text = eeg.comment!;
+      tC.text = eeg!.comment!;
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

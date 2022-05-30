@@ -3,7 +3,7 @@ export 'drugs/screen.dart';
 export 'faq/screen.dart';
 export 'news/screen.dart';
 export 'calendar.dart';
-export 'add_seizure//screen.dart';
+export 'add_seizure/screen.dart';
 export 'add_drug/screen.dart';
 export 'authorization/screen.dart';
 export 'login_confirmation/screen.dart';

@@ -31,7 +31,7 @@ class _LanguageSelectModalState extends State<LanguageSelectModal> {
   var selectedLang = DeviceStorage.locale;
 
   void onSave() {
-    updateLocale(selectedLang);
+    updateLocale(selectedLang!);
   }
 
   @override

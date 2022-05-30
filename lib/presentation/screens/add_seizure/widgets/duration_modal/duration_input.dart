@@ -9,7 +9,8 @@ import '../../../../../domain/utils/input_mask.dart';
 class DurationInput extends GetView<AddSeizureController> {
   final TextEditingController tdController;
 
-  DurationInput({required this.tdController});
+  const DurationInput({required this.tdController});
+
   @override
   Widget build(BuildContext context) {
     return Column(

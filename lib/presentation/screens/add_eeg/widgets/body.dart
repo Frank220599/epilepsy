@@ -18,13 +18,13 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   final controller = Get.put(AddEegController());
-  final EegModel eeg = Get.arguments;
+  final EegModel? eeg = Get.arguments;
 
   @override
   void initState() {
     if (eeg != null) {
       final set = controller;
-      set.date(eeg.date);
+      set.date(eeg!.date);
     }
     super.initState();
   }
@@ -44,109 +44,97 @@ class _BodyState extends State<Body> {
       controller.date(formattedDate);
     }
 
-    return Scaffold(
-      backgroundColor: const Color(0xffEAEBF3),
-      appBar: PreferredSize(
-        preferredSize: Size(GetSize.width, 100.0),
-        child: CustomAppBar(
-          onTap: () => Get.back(),
-          hasAction: false,
-          leading: AppIcons.back,
-          title: isEdit ? 'Изменить ЭЭГ' : 'Добавить ЭЭГ',
-        ),
-      ),
-      body: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Column(
-                  children: [
-                    GestureDetector(
+    return Column(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Column(
+                children: [
+                  GestureDetector(
+                    onTap: () async {
+                      final image = await pickImgFromGallery();
+                      if (image != null) {
+                        controller.image(image);
+                      }
+                    },
+                    child: CustomListTile(
                       onTap: () async {
                         final image = await pickImgFromGallery();
                         if (image != null) {
                           controller.image(image);
                         }
                       },
-                      child: CustomListTile(
-                        onTap: () async {
-                          final image = await pickImgFromGallery();
-                          if (image != null) {
-                            controller.image(image);
-                          }
-                        },
-                        leading: AppIcons.accessCalendar,
-                        title: 'attachPhoto'.tr,
-                      ),
+                      leading: AppIcons.accessCalendar,
+                      title: 'attachPhoto'.tr,
                     ),
-                    Obx(
-                      () {
-                        final img = isEdit ? eeg.image : null;
-                        return Column(
-                          children: [
-                            if (img != null && controller.image().path.isEmpty)
-                              Container(
-                                margin: EdgeInsets.only(bottom: 10),
-                                width: double.infinity,
-                                height: 200,
-                                child: Image(
-                                  image: NetworkImage(img),
-                                  fit: BoxFit.cover,
-                                ),
+                  ),
+                  Obx(
+                    () {
+                      final img = isEdit ? eeg!.image : null;
+                      return Column(
+                        children: [
+                          if (img != null && controller.image().path.isEmpty)
+                            Container(
+                              margin: const EdgeInsets.only(bottom: 10),
+                              width: double.infinity,
+                              height: 200,
+                              child: Image(
+                                image: NetworkImage(img),
+                                fit: BoxFit.cover,
                               ),
-                            if (controller.image().path.isNotEmpty)
-                              Container(
-                                margin: EdgeInsets.only(bottom: 10),
-                                width: double.infinity,
-                                height: 200,
-                                child: Image(
-                                  image: AssetImage(controller.image().path),
-                                  fit: BoxFit.cover,
-                                ),
-                              )
-                          ],
-                        );
-                      },
+                            ),
+                          if (controller.image().path.isNotEmpty)
+                            Container(
+                              margin: const EdgeInsets.only(bottom: 10),
+                              width: double.infinity,
+                              height: 200,
+                              child: Image(
+                                image: AssetImage(controller.image().path),
+                                fit: BoxFit.cover,
+                              ),
+                            )
+                        ],
+                      );
+                    },
+                  ),
+                  const SizedBox(),
+                  Obx(
+                    () => CustomListTile(
+                      onTap: _pickDate,
+                      leading: AppIcons.accessMind,
+                      subTitle: 'photoDate'.tr,
+                      // title: dateTime.toString(),
+                      title: controller.date().isNotEmpty
+                          ? controller.date()
+                          : 'selectPhotoDate'.tr,
                     ),
-                    SizedBox(),
-                    Obx(
-                      () => CustomListTile(
-                        onTap: _pickDate,
-                        leading: AppIcons.accessMind,
-                        subTitle: 'photoDate'.tr,
-                        // title: dateTime.toString(),
-                        title: controller.date().isNotEmpty
-                            ? controller.date()
-                            : 'selectPhotoDate'.tr,
-                      ),
-                    ),
-                  ],
-                ),
-                Comment(),
-              ],
-            ),
-          ),
-          Spacer(),
-          Center(
-            child: Obx(
-              () => AppButton(
-                isLoading: controller.isLoading(),
-                label: 'save'.tr,
-                onTap: () {
-                  if (isEdit) {
-                    controller.updateDrug();
-                  } else {
-                    controller.addEeg();
-                  }
-                },
+                  ),
+                ],
               ),
+              Comment(),
+            ],
+          ),
+        ),
+        const Spacer(),
+        Center(
+          child: Obx(
+            () => AppButton(
+              isLoading: controller.isLoading(),
+              label: 'save'.tr,
+              onTap: () {
+                if (isEdit) {
+                  controller.updateDrug();
+                } else {
+                  controller.addEeg();
+                }
+              },
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

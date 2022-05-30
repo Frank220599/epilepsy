@@ -1,21 +1,23 @@
+import 'package:epilepsy/infrastracture/seizure/model/seizure.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../domain/config/styles.dart';
 
 class Comment extends StatelessWidget {
-  final onChange;
-  final drug = Get.arguments;
+  final Function(String) onChange;
+  final SeizureModel? drug = Get.arguments;
   final tC = TextEditingController();
 
-  Comment({@required this.onChange});
+  Comment({Key? key, required this.onChange}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     if (drug != null) {
       try {
-        tC.text = drug.comment;
+        // tC.text = drug?.comment ?? '';
       } catch (E) {
-        tC.text = drug.notice;
+        tC.text = drug?.notice ?? '';
       }
     }
     return Column(

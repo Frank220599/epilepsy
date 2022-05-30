@@ -20,18 +20,19 @@ class AddSeizureScreen extends StatefulWidget {
 
 class _AddSeizureScreenState extends State<AddSeizureScreen> {
   final controller = Get.put(AddSeizureController());
-  final SeizureModel seizure = Get.arguments;
+  final SeizureModel? seizure = Get.arguments;
 
   @override
   void initState() {
     if (seizure != null) {
       final set = controller;
-      set.date(seizure.date);
-      set.duration(seizure.duration);
-      set.place(seizure.place);
-      set.activity(seizure.activity);
-      set.reason(seizure.reason);
-      set.type(seizure.type);
+      final data = seizure!;
+      set.date(data.date);
+      set.duration(data.duration);
+      set.place(data.place);
+      set.activity(data.activity);
+      set.reason(data.reason);
+      set.type(data.type);
     } else {
       final normalizedDate = DateTime.now().toString().split(' ')[0];
       controller.date(normalizedDate);

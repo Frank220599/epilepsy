@@ -39,12 +39,9 @@ flutter:
 
   uses-material-design: true
 
-  
-
   assets:
     - assets/images/
     - assets/icons/
-
 
   fonts:
     - family: SF-UI-Display
