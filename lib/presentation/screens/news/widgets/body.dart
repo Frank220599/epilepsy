@@ -25,7 +25,9 @@ class Body extends GetView<HandBookController> {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 20.0, vertical: 10.0),
+                  horizontal: 20.0,
+                  vertical: 10.0,
+                ),
                 child: ListView.separated(
                   clipBehavior: Clip.none,
                   padding: const EdgeInsets.symmetric(vertical: 10.0),
