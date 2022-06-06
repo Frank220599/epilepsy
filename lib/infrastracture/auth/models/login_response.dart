@@ -4,9 +4,8 @@ class LoginResponse {
   LoginResponse({this.data});
 
   LoginResponse.fromJson(Map<String, dynamic> json) {
-    data = json['data'] != null
-        ? LoginResponseData.fromJson(json['data'])
-        : null;
+    data =
+        json['data'] != null ? LoginResponseData.fromJson(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -24,10 +23,9 @@ class LoginResponseData {
 
   LoginResponseData({required this.userId, required this.code});
 
-
   factory LoginResponseData.fromJson(Map<String, dynamic> map) {
     return LoginResponseData(
-      userId: map['userId'] as int,
+      userId: map['user_id'] as int,
       code: map['code'] as String,
     );
   }
@@ -38,7 +36,4 @@ class LoginResponseData {
     data['code'] = code;
     return data;
   }
-
-
-
 }
